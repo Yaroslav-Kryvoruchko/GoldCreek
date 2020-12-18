@@ -1,0 +1,410 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
+/* font-family: "Noto Sans JP", sans-serif; */
+
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+/* font-family: "Abril Fatface", cursive; */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+html {
+  /* scroll-behavior: smooth; */
+  height: 6000px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  background: #000b1d;
+  width: 100vw;
+  height: 60px;
+  /* transform: translateY(-40px); */
+
+  transition: transform 0.5s ease 0s, background 0.5s ease 0s,
+    height 0.5s ease 0s;
+
+  z-index: 100;
+}
+
+.header_down {
+  background: rgba(0, 11, 29, 0.9);
+  height: 80px;
+}
+
+header:hover {
+  transform: translateY(0);
+}
+
+.open_header {
+  transform: translateY(0px);
+}
+
+.header_main--items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1140px;
+  margin: 0 auto;
+}
+
+.header__items {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__item {
+  margin: 0 2.5rem;
+}
+
+.header__item a {
+  text-decoration: none;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.5rem;
+  color: white;
+
+  transition: color 0.4s ease 0s;
+}
+
+.header__item a:hover {
+  color: #a0a0a0;
+  /* color: #b8860b; */
+  /* color: #ff1734; */
+}
+
+#sec-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+.sec-1__item {
+  background: linear-gradient(to top, rgb(0, 0, 0) -85%, transparent),
+    linear-gradient(to bottom, rgb(0, 0, 0) -10%, transparent),
+    url("images/shutterstock_220523407.jpg") left 10% bottom 70% / cover
+      no-repeat border-box;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#item_two {
+  background: linear-gradient(to top, rgb(0, 0, 0) -85%, transparent),
+    linear-gradient(to bottom, rgb(0, 0, 0) -10%, transparent),
+    url("images/wp3882286.jpg") left 10% bottom 70% / cover no-repeat border-box;
+}
+
+#item_tree {
+  background: linear-gradient(to top, rgb(0, 0, 0) -85%, transparent),
+    linear-gradient(to bottom, rgb(0, 0, 0) -10%, transparent),
+    url("images/troy-mortier-eKY6_9W_iqY-unsplash.jpg") left 10% bottom 70% /
+      cover no-repeat border-box;
+}
+
+#item_four {
+  background: linear-gradient(to top, rgb(0, 0, 0) -85%, transparent),
+    linear-gradient(to bottom, rgb(0, 0, 0) -10%, transparent),
+    url("images/Photo\ by\ Newcrest\ Mining.png") left 10% bottom 70% / cover
+      no-repeat border-box;
+}
+
+.sec-items {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.sec-item {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sec-1__item h1 {
+  font-size: 4.5rem;
+  color: white;
+  font-family: "Abril Fatface", cursive;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.sec-1__item a {
+  background: transparent;
+  border: 3px solid white;
+  color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  /* outline: none; */
+  text-decoration: none;
+  font-size: 2rem;
+  font-family: "Noto Sans JP", sans-serif;
+
+  transition: color 0.4s ease 0s, background 0.4s ease 0s;
+}
+
+.sec-1__item a:hover {
+  color: #000b1d;
+  background: rgba(255, 255, 255, 1);
+}
+
+#sec-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 1140px;
+  margin: 0 auto;
+  padding: 10rem 0;
+}
+
+#sec-2 h1 {
+  font-family: "Abril Fatface", cursive;
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 10rem;
+  opacity: 0;
+
+  transition: opacity 1s ease 0s;
+}
+
+#sec-2 h1._active {
+  opacity: 1;
+}
+
+.sec-2_items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 6.875rem auto;
+
+  transform: translateY(20%);
+  opacity: 0;
+  transition: transform 1s ease 0s, opacity 1s ease 0s;
+}
+
+.sec-2_items._active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sec-2_items img {
+  width: 576px;
+  height: 324px;
+}
+
+.sec-2_items p {
+  text-align: right;
+  margin: 0 4rem 0 0;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.25rem;
+}
+
+#sec-item_two p {
+  text-align: left;
+  margin: 0 0 0 4rem;
+}
+
+#sec-3 {
+  width: 100vw;
+  background: url("images/artyom-korshunov-NWByxwVN-J0-unsplash.jpg") left 10%
+    bottom 70% / cover no-repeat border-box;
+  background-attachment: fixed;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+
+  transition: padding-bottom 0.5s ease 0s;
+}
+
+.padd-sec-3 {
+    padding-bottom: 0rem !important;
+}
+
+.sec-3--items_main {
+  width: 1140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.sec-3__items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.sec-3__item {
+  width: 300px;
+  height: 300px;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  margin: 3.75rem;
+
+  transition: background 0.4s ease 0s;
+  cursor: pointer;
+}
+
+.sec-3__item:hover {
+  background: #000b1d;
+}
+
+.sec-3__item h2 {
+  font-family: "Abril Fatface", cursive;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.sec-3__item p {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.sec-3--items_main button {
+  background: transparent;
+  color: white;
+  border: 3px solid white;
+  padding: 0.5rem 1rem;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.5rem;
+  outline: none;
+  cursor: pointer;
+
+  margin-bottom: 4rem;
+
+  transition: background 0.5s ease 0s, color 0.5s ease 0s;
+}
+
+.sec-3--items_main button:hover {
+  background: white;
+  color: #000b1d;
+}
+
+.calc {
+  background: rgba(0, 0, 0, 0.9);
+  width: 0vw;
+  padding: 4rem 0;
+
+  display: none;
+
+  transition: width 0.5s ease 0s;
+}
+
+.open_calc {
+    width: 100vw;
+}
+
+.calc-items {
+  display: flex;
+  align-items: flex-end !important;
+  justify-content: center;
+  width: 1140px;
+  margin: 0 auto;
+
+  opacity: 0;
+  transition: opacity 1s ease 0s;
+}
+
+.open_calc-items {
+    opacity: 1;
+}
+
+.calc-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0 1.875rem;
+}
+
+label {
+  color: white;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1rem;
+}
+
+#samples {
+  width: 150px;
+  height: 50px;
+  border: 3px solid white;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.25rem;
+
+  background: white;
+  outline: none;
+}
+
+#grams {
+  width: 150px;
+  height: 50px;
+  border: 3px solid white;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.25rem;
+  text-align: center;
+
+  outline: none;
+}
+
+#price {
+  width: 180px;
+  height: 50px;
+  /* border: 3px solid white; */
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: white;
+}
+
+#calc {
+  background: transparent;
+  width: 200px;
+  height: 50px;
+  border: 3px solid white;
+  color: white;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 1.25rem;
+
+  margin-bottom: 0;
+
+  transition: background 0.5s ease 0s, color 0.5s ease 0s;
+}
+
+#calc:hover {
+    background: white;
+    color: #000b1d;
+}
