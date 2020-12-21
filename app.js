@@ -141,9 +141,9 @@ const secTree = document.getElementById("sec-3");
 
 let testBtnCalc = false;
 
-opnBtn.addEventListener("click", () => {
+function openCalc() {
   if (!testBtnCalc) {
-    calc.style.display = "block";
+    calc.style.transform = "scale(1)";
     secTree.classList.add("padd-sec-3");
     setTimeout(() => {
       calc.classList.add("open_calc");
@@ -162,9 +162,81 @@ opnBtn.addEventListener("click", () => {
       secTree.classList.remove("padd-sec-3");
     }, 1200);
     setTimeout(() => {
-      calc.style.display = "none";
-    }, 1000);
+      calc.style.transform = "scale(0)";
+    }, 1200);
 
     testBtnCalc = false;
   }
+}
+
+function sampOpenCalc() {
+  if (!testBtnCalc) {
+    calc.style.transform = "scale(1)";
+    secTree.classList.add("padd-sec-3");
+    setTimeout(() => {
+      calc.classList.add("open_calc");
+    }, 500);
+    setTimeout(() => {
+      calcItems.classList.add("open_calc-items");
+    }, 700);
+    testBtnCalc = true;
+    console.log(testBtnCalc);
+  }
+}
+
+opnBtn.addEventListener("click", () => {
+  openCalc();
+});
+
+const sampOne = document.getElementById("samp-one");
+const sampTwo = document.getElementById("samp-two");
+const sampTree = document.getElementById("samp-tree");
+const sampFour = document.getElementById("samp-four");
+const sampFive = document.getElementById("samp-five");
+const sampSix = document.getElementById("samp-six");
+
+sampOne.addEventListener("click", () => {
+  sample.value = "375";
+  sampOpenCalc();
+});
+
+sampTwo.addEventListener("click", () => {
+  sample.value = "583";
+  sampOpenCalc();
+});
+
+sampTree.addEventListener("click", () => {
+  sample.value = "585";
+  sampOpenCalc();
+});
+
+sampFour.addEventListener("click", () => {
+  sample.value = "750";
+  sampOpenCalc();
+});
+
+sampFive.addEventListener("click", () => {
+  sample.value = "958";
+  sampOpenCalc();
+});
+
+sampSix.addEventListener("click", () => {
+  sample.value = "999";
+  sampOpenCalc();
+});
+
+const firstName = document.getElementById("name");
+const email = document.getElementById("email");
+const text = document.getElementById("text");
+
+const sendBtn = document.getElementById("send_btn");
+
+sendBtn.addEventListener("click", () => {
+  const formObj = {
+    firstName: firstName.value,
+    email: email.value,
+    text: text.value,
+  };
+
+  console.log(formObj);
 });
