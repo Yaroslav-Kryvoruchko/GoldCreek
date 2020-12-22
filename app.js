@@ -267,3 +267,15 @@ sendBtn.addEventListener("click", () => {
 
   console.log(formObj);
 });
+
+// BtnUP
+
+const btnUp = document.querySelector(".up__btn");
+
+window.addEventListener("scroll", () => {
+  if (scrollY > 300) {
+    btnUp.classList.add("open_up-btn");
+  } else {
+    btnUp.classList.remove("open_up-btn");
+  }
+});
