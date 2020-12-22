@@ -152,6 +152,7 @@ function openCalc() {
       calcItems.classList.add("open_calc-items");
     }, 700);
     testBtnCalc = true;
+    opnBtn.textContent = "Close Calculate";
     console.log(testBtnCalc);
   } else {
     calcItems.classList.remove("open_calc-items");
@@ -164,7 +165,7 @@ function openCalc() {
     setTimeout(() => {
       calc.style.transform = "scale(0)";
     }, 1200);
-
+    opnBtn.textContent = "Open Calculate";
     testBtnCalc = false;
   }
 }
@@ -197,39 +198,48 @@ const sampSix = document.getElementById("samp-six");
 
 sampOne.addEventListener("click", () => {
   sample.value = "375";
+  opnBtn.textContent = "Close Calculate";
   sampOpenCalc();
 });
 
 sampTwo.addEventListener("click", () => {
   sample.value = "583";
+  opnBtn.textContent = "Close Calculate";
   sampOpenCalc();
 });
 
 sampTree.addEventListener("click", () => {
   sample.value = "585";
+  opnBtn.textContent = "Close Calculate";
   sampOpenCalc();
 });
 
 sampFour.addEventListener("click", () => {
   sample.value = "750";
+  opnBtn.textContent = "Close Calculate";
   sampOpenCalc();
 });
 
 sampFive.addEventListener("click", () => {
   sample.value = "958";
+  opnBtn.textContent = "Close Calculate";
   sampOpenCalc();
 });
 
 sampSix.addEventListener("click", () => {
   sample.value = "999";
+  opnBtn.textContent = "Close Calculate";
   sampOpenCalc();
 });
+
+// Contact us
 
 const firstName = document.getElementById("name");
 const email = document.getElementById("email");
 const text = document.getElementById("text");
 
 const sendBtn = document.getElementById("send_btn");
+const sendMessage = document.querySelector(".messageSend");
 
 sendBtn.addEventListener("click", () => {
   const formObj = {
@@ -237,6 +247,23 @@ sendBtn.addEventListener("click", () => {
     email: email.value,
     text: text.value,
   };
+
+  if (
+    firstName.value.trim() === "" ||
+    email.value.trim() === "" ||
+    text.value.trim() === ""
+  ) {
+    return;
+  } else if (email.value.includes("@")) {
+    sendMessage.classList.add("messageSendOpen");
+    sendMessage.textContent = `${firstName.value}, your message has been sent`;
+    firstName.value = "";
+    email.value = "";
+    text.value = "";
+    setTimeout(() => {
+      sendMessage.classList.remove("messageSendOpen");
+    }, 3000);
+  }
 
   console.log(formObj);
 });

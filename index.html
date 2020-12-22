@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoldCreek</title>
+    <link rel="shortcut icon" href="images/money.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
   </head>
   <body>
     <header>
       <div class="header_main--items">
+        <ul class="header__items">
+          <li class="header__item"><img src="images/" alt=""></li>
+        </ul>
         <ul class="header__items">
           <li class="header__item">
             <a href="index.html">Home</a>
@@ -18,10 +22,10 @@
             <a href="#sec-2">History</a>
           </li>
           <li class="header__item">
-            <a href="">Samples</a>
+            <a href="#sec-3">Samples</a>
           </li>
           <li class="header__item">
-            <a href="">Info</a>
+            <a href="#sec-4">Contact us</a>
           </li>
         </ul>
       </div>
@@ -124,18 +128,18 @@
       <section id="sec-3">
         <div class="sec-3--items_main">
           <ul class="sec-3__items">
-            <li class="sec-3__item" id="samp-one">
+            <li class="sec-3__item _anim-items _anim-no-hide" id="samp-one">
               <h2>SAMPLES 375</h2>
               <p>
                 37.5% gold,<br />
                 62.5% silver and copper.
               </p>
             </li>
-            <li class="sec-3__item" id="samp-two">
+            <li class="sec-3__item _anim-items _anim-no-hide" id="samp-two">
               <h2>SAMPLES 583</h2>
               <p>gold 58.5%,<br />silver 8%, copper 33.5%.</p>
             </li>
-            <li class="sec-3__item" id="samp-tree">
+            <li class="sec-3__item _anim-items _anim-no-hide" id="samp-tree">
               <h2>SAMPLES 585</h2>
               <p>
                 58.5% gold,<br />
@@ -144,19 +148,19 @@
             </li>
           </ul>
           <ul class="sec-3__items">
-            <li class="sec-3__item" id="samp-four">
+            <li class="sec-3__item _anim-items _anim-no-hide" id="samp-four">
               <h2>SAMPLES 750</h2>
               <p>
                 75% gold,<br />
                 25% silver.
               </p>
             </li>
-            <li class="sec-3__item" id="samp-five">
+            <li class="sec-3__item _anim-items _anim-no-hide" id="samp-five">
               <h2>SAMPLES 958</h2>
               95.8% gold,<br />
               4.2% silver and copper.
             </li>
-            <li class="sec-3__item" id="samp-six">
+            <li class="sec-3__item _anim-items _anim-no-hide" id="samp-six">
               <h2>SAMPLES 999</h2>
               <p>
                 Almost pure noble<br />
@@ -200,19 +204,23 @@
           </div>
         </div>
       </section>
+      <div class="messageSend"></div>
       <section id="sec-4">
         <h1 class="_anim-items _anim-no-hide">CONTACT US</h1>
         <h2 class="_anim-items _anim-no-hide">
           Add your data to the fields so that we can contact you
         </h2>
         <div class="sec-4__items">
-          <div class="sec-4__item">
+          <form class="sec-4__item">
             <input
-              type="text"
+              type="name"
               name=""
               placeholder="Name"
               class="_anim-items _anim-no-hide"
               id="name"
+              required
+              pattern="^[a-zA-Z]+$"
+              ;
             />
             <input
               type="email"
@@ -220,6 +228,7 @@
               placeholder="Email"
               class="_anim-items _anim-no-hide"
               id="email"
+              required
             />
             <textarea
               name=""
@@ -228,11 +237,12 @@
               placeholder="Text..."
               class="_anim-items _anim-no-hide"
               id="text"
+              required
             ></textarea>
             <button class="_anim-items _anim-no-hide" id="send_btn">
               Send
             </button>
-          </div>
+          </form>
           <div class="sec-4__item">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7004.738128211911!2d-138.9758457477371!3d63.9654307542952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5148dbe439153f15%3A0xfbc76380a9626970!2z0JPQvtC70LQg0JHQvtGC0YLQvtC8LCDQotC10YDRgNC40YLQvtGA0LjRjyDQrtC60L7QvSwg0JrQsNC90LDQtNCw!5e0!3m2!1sru!2sus!4v1608503946422!5m2!1sru!2sus"
