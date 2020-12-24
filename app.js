@@ -273,9 +273,83 @@ sendBtn.addEventListener("click", () => {
 const btnUp = document.querySelector(".up__btn");
 
 window.addEventListener("scroll", () => {
-  if (scrollY > 300) {
+  if (scrollY > 200) {
     btnUp.classList.add("open_up-btn");
   } else {
     btnUp.classList.remove("open_up-btn");
+  }
+});
+
+// MobileBtn
+
+const menuBtn = document.querySelector(".menu-btn");
+const menu = document.querySelector(".mobile__menu");
+
+const itemMenuOne = document.getElementById("one");
+const itemMenuTwo = document.getElementById("two");
+const itemMenuTree = document.getElementById("tree");
+const itemMenuFour = document.getElementById("four");
+
+let menuOpen = false;
+
+menuBtn.addEventListener("click", () => {
+  if (!menuOpen) {
+    menuBtn.classList.add("open");
+    setTimeout(() => {
+      menu.classList.add("open_menu");
+    }, 100);
+    setTimeout(() => {
+      itemMenuOne.classList.add("open_menu-items");
+    }, 700);
+    setTimeout(() => {
+      itemMenuTwo.classList.add("open_menu-items");
+    }, 800);
+    setTimeout(() => {
+      itemMenuTree.classList.add("open_menu-items");
+    }, 900);
+    setTimeout(() => {
+      itemMenuFour.classList.add("open_menu-items");
+    }, 1000);
+    menuOpen = true;
+  } else {
+    menuBtn.classList.remove("open");
+    setTimeout(() => {
+      itemMenuFour.classList.remove("open_menu-items");
+    }, 100);
+    setTimeout(() => {
+      itemMenuTree.classList.remove("open_menu-items");
+    }, 200);
+    setTimeout(() => {
+      itemMenuTwo.classList.remove("open_menu-items");
+    }, 300);
+    setTimeout(() => {
+      itemMenuOne.classList.remove("open_menu-items");
+    }, 400);
+    setTimeout(() => {
+      menu.classList.remove("open_menu");
+    }, 600);
+    menuOpen = false;
+  }
+});
+
+window.addEventListener("scroll", () => {
+  if (scrollY > 10) {
+    menuBtn.classList.remove("open");
+    setTimeout(() => {
+      itemMenuFour.classList.remove("open_menu-items");
+    }, 100);
+    setTimeout(() => {
+      itemMenuTree.classList.remove("open_menu-items");
+    }, 200);
+    setTimeout(() => {
+      itemMenuTwo.classList.remove("open_menu-items");
+    }, 300);
+    setTimeout(() => {
+      itemMenuOne.classList.remove("open_menu-items");
+    }, 400);
+    setTimeout(() => {
+      menu.classList.remove("open_menu");
+    }, 600);
+    menuOpen = false;
   }
 });

@@ -30,6 +30,27 @@
         </ul>
       </div>
     </header>
+    <header id="header__mobile">
+      <div class="menu-btn">
+        <div class="menu-btn__burger"></div>
+      </div>
+    </header>
+    <div class="mobile__menu">
+      <ul class="mobile__menu__items">
+        <li class="mobile__menu__item" id="one">
+          <a href="index.html">Home</a>
+        </li>
+        <li class="mobile__menu__item" id="two">
+          <a href="#sec-2">History</a>
+        </li>
+        <li class="mobile__menu__item" id="tree">
+          <a href="#sec-3">Samples</a>
+        </li>
+        <li class="mobile__menu__item" id="four">
+          <a href="#sec-4">Contact us</a>
+        </li>
+      </ul>
+    </div>
     <main>
       <section id="sec-1">
         <ul class="sec-items">
@@ -172,37 +193,37 @@
               </p>
             </li>
           </ul>
-          <button id="opn_btn">Open Calculate</button>
-          <div class="calc">
-            <div class="calc-items">
-              <div class="calc-item">
-                <label for="">Samples</label>
-                <select name="" id="samples">
-                  <option value="375">375</option>
-                  <option value="583">583</option>
-                  <option value="585">585</option>
-                  <option value="750">750</option>
-                  <option value="958">958</option>
-                  <option value="999">999</option>
-                </select>
-              </div>
-              <div class="calc-item">
-                <label for="">Grams</label>
-                <input
-                  type="number"
-                  name=""
-                  id="grams"
-                  min="0"
-                  placeholder="2.45"
-                />
-              </div>
-              <div class="calc-item">
-                <label for="">Price</label>
-                <span id="price"></span>
-              </div>
-              <div class="calc-item">
-                <button id="calc">CALCULATE</button>
-              </div>
+        </div>
+        <button id="opn_btn">Open Calculate</button>
+        <div class="calc">
+          <div class="calc-items">
+            <div class="calc-item">
+              <label for="">Samples</label>
+              <select name="" id="samples">
+                <option value="375">375</option>
+                <option value="583">583</option>
+                <option value="585">585</option>
+                <option value="750">750</option>
+                <option value="958">958</option>
+                <option value="999">999</option>
+              </select>
+            </div>
+            <div class="calc-item">
+              <label for="">Grams</label>
+              <input
+                type="number"
+                name=""
+                id="grams"
+                min="0"
+                placeholder="2.45"
+              />
+            </div>
+            <div class="calc-item">
+              <label for="">Price</label>
+              <span id="price"></span>
+            </div>
+            <div class="calc-item">
+              <button id="calc">CALCULATE</button>
             </div>
           </div>
         </div>
