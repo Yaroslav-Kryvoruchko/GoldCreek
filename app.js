@@ -333,7 +333,7 @@ menuBtn.addEventListener("click", () => {
 });
 
 window.addEventListener("scroll", () => {
-  if (scrollY > 10) {
+  if (scrollY > 50) {
     menuBtn.classList.remove("open");
     setTimeout(() => {
       itemMenuFour.classList.remove("open_menu-items");

@@ -165,7 +165,7 @@ header:hover {
 }
 
 .mobile__menu {
-  position: absolute;
+  position: relative;
   display: none;
   align-items: center;
   justify-content: center;
@@ -231,7 +231,7 @@ header:hover {
   
   #header__mobile {
     display: flex;
-    position: relative;
+    position: absolute;
   }
 
   .mobile__menu {
