@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GoldCreek</title>
-    <link rel="shortcut icon" href="images/money.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="images/logo.svg" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
     <script src="app.js" defer></script>
   </head>
@@ -12,7 +12,9 @@
     <header>
       <div class="header_main--items">
         <ul class="header__items">
-          <li class="header__item"><img src="images/" alt="" /></li>
+          <a href="index.html"
+            ><li class="header__item"><img src="images/logo.svg" alt="" /></li
+          ></a>
         </ul>
         <ul class="header__items">
           <li class="header__item">
@@ -31,6 +33,11 @@
       </div>
     </header>
     <header id="header__mobile">
+      <ul class="header__items">
+        <a href="index.html"
+          ><li class="header__item"><img src="images/logo.svg" alt="" /></li
+        ></a>
+      </ul>
       <div class="menu-btn">
         <div class="menu-btn__burger"></div>
       </div>
@@ -51,14 +58,14 @@
                 Calculate how much you<br />
                 can earn on gold
               </h1>
-              <a href="">Calculate now</a>
+              <a href="#sec-3">Calculate now</a>
             </div>
             <div class="sec-1__item" id="item_tree">
               <h1>
                 Contact us for more<br />
                 information on gold
               </h1>
-              <a href="">Contact us</a>
+              <a href="#sec-4">Contact us</a>
             </div>
             <div class="sec-1__item" id="item_four">
               <h1>
@@ -283,6 +290,19 @@
         </div>
       </section>
     </main>
-    <footer></footer>
+    <footer>
+      <ul class="footer-seti__items">
+        <li class="footer-seti__item">
+          <a href="index.html"
+            ><span id="footer_copyright">©</span> GoldCreek</a
+          >
+        </li>
+        <li class="footer-seti__item">
+          <a href=""><img src="images/facebook.svg" alt="" /></a>
+          <a href=""><img src="images/instagram.svg" alt="" /></a>
+          <a href=""><img src="images/telegram.svg" alt="" id="telegram" /></a>
+        </li>
+      </ul>
+    </footer>
   </body>
 </html>

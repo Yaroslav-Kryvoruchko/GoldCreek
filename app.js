@@ -9,44 +9,49 @@ window.addEventListener("scroll", () => {
 });
 
 const secItems = document.querySelector(".sec-item");
-secItems.style.transition = `transform 2s ease-in-out 0s`;
+secItems.style.transition = `transform 3s ease-in-out 0s`;
 
 function galery() {
+  secItems.style.transition = `transform 3s ease-in-out 0s`;
+
   setTimeout(() => {
     secItems.style.transform = `translateX(-12.5%)`;
-  }, 3000);
+  }, 4000);
 
   setTimeout(() => {
     secItems.style.transform = `translateX(-25%)`;
-  }, 8000);
+  }, 9000);
 
   setTimeout(() => {
     secItems.style.transform = `translateX(-37.5%)`;
-  }, 13000);
+  }, 14000);
 
   setTimeout(() => {
     secItems.style.transform = `translateX(-50%)`;
-  }, 18000);
+  }, 19000);
 
   setTimeout(() => {
     secItems.style.transform = `translateX(-62.5%)`;
-  }, 23000);
+  }, 24000);
 
   setTimeout(() => {
     secItems.style.transform = `translateX(-75%)`;
-  }, 28000);
+  }, 29000);
 
   setTimeout(() => {
     secItems.style.transform = `translateX(-87.5%)`;
-  }, 33000);
+  }, 34000);
 }
 
 galery();
 
 setInterval(() => {
   secItems.style.transform = `translateX(0%)`;
-  galery();
-}, 38000);
+  secItems.style.transition = `transform 7s ease-in-out 0s`;
+  setTimeout(() => {
+    galery();
+  }, 6000);
+}, 39000);
 
 // SCROLL
 
@@ -143,15 +148,15 @@ let testBtnCalc = false;
 
 function openCalc() {
   if (!testBtnCalc) {
-    calc.style.transform = "scale(1)";
-    secTree.classList.add("padd-sec-3");
     setTimeout(() => {
       calc.classList.add("open_calc");
     }, 500);
     setTimeout(() => {
       calcItems.classList.add("open_calc-items");
     }, 700);
-    testBtnCalc = true;
+    setTimeout(() => {
+      testBtnCalc = true;
+    }, 1200);
     opnBtn.textContent = "Close Calculate";
     console.log(testBtnCalc);
   } else {
@@ -162,28 +167,27 @@ function openCalc() {
     setTimeout(() => {
       secTree.classList.remove("padd-sec-3");
     }, 1200);
-    setTimeout(() => {
-      calc.style.transform = "scale(0)";
-    }, 1200);
     opnBtn.textContent = "Open Calculate";
-    testBtnCalc = false;
+    setTimeout(() => {
+      testBtnCalc = false;
+    }, 1200);
   }
 }
 
-function sampOpenCalc() {
-  if (!testBtnCalc) {
-    calc.style.transform = "scale(1)";
-    secTree.classList.add("padd-sec-3");
-    setTimeout(() => {
-      calc.classList.add("open_calc");
-    }, 500);
-    setTimeout(() => {
-      calcItems.classList.add("open_calc-items");
-    }, 700);
-    testBtnCalc = true;
-    console.log(testBtnCalc);
-  }
-}
+// function sampOpenCalc() {
+//   if (!testBtnCalc) {
+//     calc.style.transform = "scale(1)";
+//     secTree.classList.add("padd-sec-3");
+//     setTimeout(() => {
+//       calc.classList.add("open_calc");
+//     }, 500);
+//     setTimeout(() => {
+//       calcItems.classList.add("open_calc-items");
+//     }, 700);
+//     testBtnCalc = true;
+//     console.log(testBtnCalc);
+//   }
+// }
 
 opnBtn.addEventListener("click", () => {
   openCalc();
