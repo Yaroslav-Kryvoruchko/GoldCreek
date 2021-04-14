@@ -25,17 +25,19 @@ header {
   align-items: center;
   justify-content: center;
   position: fixed;
+  right: 0;
   background: #000b1d;
   width: 100vw;
-  height: 60px;
+  height: 70px;
 
-  transition: transform 0.5s ease 0s, background 0.5s ease 0s,
-    height 0.5s ease 0s;
+  /* transition: transform 0.5s ease 0s, background 0.5s ease 0s,
+    height 0.5s ease 0s; */
+  transition: all 0.5s ease 0s;
 
-  z-index: 5;
+  z-index: 20;
 }
 
-.header_down {
+/* .header_down {
   background: rgba(0, 11, 29, 0.9);
   height: 80px;
 }
@@ -46,27 +48,28 @@ header:hover {
 
 .open_header {
   transform: translateY(0px);
-}
+} */
 
 .header_main--items {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 1140px;
   margin: 0 auto;
 }
 
 .header__items {
-  padding: 0;
-  list-style: none;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  padding: 0;
+  list-style: none;
+  width: 100%;
 }
 
 .header__item {
   /* width: 120px; */
-  margin: 0 2.5rem;
+  margin: 2rem 1.5rem;
 }
 
 .header__item a {
@@ -77,6 +80,10 @@ header:hover {
   color: white;
 
   transition: color 0.4s ease 0s;
+}
+
+.active_item_header {
+  color: #b8860b !important;
 }
 
 .header__item a:hover {
@@ -196,6 +203,7 @@ header:hover {
   justify-content: center;
   width: 100vw;
   height: 100vw;
+  z-index: 10;
 }
 
 .mobile__menu__item {
@@ -218,6 +226,10 @@ header:hover {
   transform: translateX(0%);
 }
 
+.header__items-one {
+  list-style: none;
+}
+
 @media (max-width: 57.25rem) {
   .header__item {
     margin: 1.5rem;
@@ -235,11 +247,16 @@ header:hover {
 
   #header__mobile {
     display: flex;
-    position: absolute;
+    position: fixed;
+  }
+
+  .header__items {
+    width: 40%;
   }
 
   .mobile__menu {
     display: flex;
+    position: fixed;
   }
 
   .header_main--items {
@@ -256,80 +273,209 @@ header:hover {
   }
 }
 
-/* @media (max-width: 375px) {
-  header {
-    display: none;
-  }
-
-  #header__mobile {
-    display: flex;
-    position: absolute;
-  }
-
-  .mobile__menu {
-    display: flex;
-  }
-} */
-
-#sec-1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#home {
   width: 100vw;
   height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 
   overflow: hidden;
 }
 
-.sec-1__item {
-  background: linear-gradient(to top, rgb(0, 0, 0) -85%, transparent),
-    linear-gradient(to bottom, rgb(0, 0, 0) -10%, transparent),
-    url("images/shutterstock_220523407.jpg") left 10% bottom 70% / cover
-      no-repeat border-box;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-#item_two {
-  background: linear-gradient(to top, rgb(0, 0, 0) -85%, transparent),
-    linear-gradient(to bottom, rgb(0, 0, 0) -10%, transparent),
-    url("images/wp3882286.jpg") left 10% bottom 70% / cover no-repeat border-box;
-}
-
-#item_tree {
-  background: linear-gradient(to top, rgb(0, 0, 0) -85%, transparent),
-    linear-gradient(to bottom, rgb(0, 0, 0) -10%, transparent),
-    url("images/troy-mortier-eKY6_9W_iqY-unsplash.jpg") left 10% bottom 70% /
-      cover no-repeat border-box;
-}
-
-#item_four {
-  background: linear-gradient(to top, rgb(0, 0, 0) -85%, transparent),
-    linear-gradient(to bottom, rgb(0, 0, 0) -10%, transparent),
-    url("images/Photo\ by\ Newcrest\ Mining.png") left 10% bottom 70% / cover
-      no-repeat border-box;
-}
-
-.sec-items {
-  position: relative;
-  list-style: none;
-  padding: 0;
-  width: 100vw;
-  height: 100vh;
-}
-
-.sec-item {
+#btn_left {
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
+  left: 0%;
+  width: 150px;
+  height: 100vh;
+  cursor: pointer;
+  opacity: 0.2;
+
+  transition: opacity 0.4s ease 0s;
+
+  z-index: 10;
 }
 
-.sec-1__item h1 {
+#btn_left::before,
+#btn_left::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 5px;
+  background: white;
+}
+
+#btn_left::before {
+  transform: translateY(-180%) rotate(-45deg);
+}
+
+#btn_left::after {
+  transform: translateY(180%) rotate(45deg);
+}
+
+#btn_left:hover {
+  opacity: 1;
+}
+
+#btn_right {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0%;
+  width: 150px;
+  height: 100vh;
+  cursor: pointer;
+  opacity: 0.2;
+
+  transition: opacity 0.4s ease 0s;
+
+  z-index: 10;
+}
+
+#btn_right::before,
+#btn_right::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 5px;
+  background: white;
+}
+
+#btn_right::before {
+  transform: translateY(-180%) rotate(45deg);
+}
+
+#btn_right::after {
+  transform: translateY(180%) rotate(-45deg);
+}
+
+#btn_right:hover {
+  opacity: 1;
+}
+
+.home-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 2rem;
+  list-style: none;
+}
+
+.home-item {
+  margin: 0 2rem;
+}
+
+#one,
+#two,
+#tree,
+#four {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  /* border: 1px solid white; */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  transform: translateY(-1rem);
+  z-index: 5;
+  cursor: pointer;
+
+  transition: background 0.4s ease 0s, border 0.4s ease 0s;
+}
+
+#one:hover,
+#two:hover,
+#tree:hover,
+#four:hover {
+  background: white;
+  border: 1px solid white;
+}
+
+.active {
+  background: white !important;
+  border: 1px solid white !important;
+}
+
+.home_item-one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background: linear-gradient(to top, rgb(0, 0, 0) -85%, transparent),
+    linear-gradient(to bottom, rgb(0, 0, 0) -10%, transparent),
+    url("images/shutterstock_220523407.jpg") left 10% bottom 70% / cover
+      no-repeat border-box;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  transition: opacity 1s ease 0s;
+}
+
+.home_item-two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background: linear-gradient(to top, rgb(0, 0, 0) -85%, transparent),
+    linear-gradient(to bottom, rgb(0, 0, 0) -10%, transparent),
+    url("images/wp3882286.jpg") left 10% bottom 70% / cover no-repeat border-box;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  transition: opacity 1s ease 0s;
+}
+
+.home_item-tree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background: linear-gradient(to top, rgb(0, 0, 0) -85%, transparent),
+    linear-gradient(to bottom, rgb(0, 0, 0) -10%, transparent),
+    url("images/troy-mortier-eKY6_9W_iqY-unsplash.jpg") left 10% bottom 70% /
+      cover no-repeat border-box;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  transition: opacity 1s ease 0s;
+}
+
+.home_item-four {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background: linear-gradient(to top, rgb(0, 0, 0) -85%, transparent),
+    linear-gradient(to bottom, rgb(0, 0, 0) -10%, transparent),
+    url("images/Photo\ by\ Newcrest\ Mining.png") left 10% bottom 70% / cover
+      no-repeat border-box;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  transition: opacity 1s ease 0s;
+}
+
+.open-item-gallery {
+  opacity: 1 !important;
+}
+
+.home_item-one h1,
+.home_item-two h1,
+.home_item-tree h1,
+.home_item-four h1 {
   font-size: 4.5rem;
   color: white;
   font-family: "Abril Fatface", cursive;
@@ -338,13 +484,16 @@ header:hover {
   margin-bottom: 2.5rem;
 }
 
-.sec-1__item a {
+.home_item-one a,
+.home_item-two a,
+.home_item-tree a,
+.home_item-four a {
   background: transparent;
   border: 3px solid white;
   color: white;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  /* outline: none; */
+  outline: none;
   text-decoration: none;
   font-size: 2rem;
   font-family: "Noto Sans JP", sans-serif;
@@ -352,29 +501,67 @@ header:hover {
   transition: color 0.4s ease 0s, background 0.4s ease 0s;
 }
 
+.home_item-one a:hover,
+.home_item-two a:hover,
+.home_item-tree a:hover,
+.home_item-four a:hover {
+  color: #000b1d;
+  background: rgba(255, 255, 255, 1);
+}
+
 .sec-1__item a:hover {
   color: #000b1d;
   background: rgba(255, 255, 255, 1);
 }
 
+@media (max-width: 62.5rem) {
+  .home_item-one h1,
+  .home_item-two h1,
+  .home_item-tree h1,
+  .home_item-four h1 {
+    font-size: 3.5rem;
+  }
+}
+
 @media (max-width: 48rem) {
-  .sec-1__item h1 {
+  .home_item-one h1,
+  .home_item-two h1,
+  .home_item-tree h1,
+  .home_item-four h1 {
     font-size: 3.5rem;
     padding: 0 15px;
   }
 
-  .sec-1__item a {
+  .home_item-one a,
+  .home_item-two a,
+  .home_item-tree a,
+  .home_item-four a {
     font-size: 1.5rem;
+  }
+
+  #btn_right,
+  #btn_left {
+    display: none;
+  }
+
+  .home-items {
+    display: none;
   }
 }
 
 @media (max-width: 375px) {
-  .sec-1__item h1 {
+  .home_item-one h1,
+  .home_item-two h1,
+  .home_item-tree h1,
+  .home_item-four h1 {
     font-size: 2.5rem;
     padding: 0 15px;
   }
 
-  .sec-1__item a {
+  .home_item-one a,
+  .home_item-two a,
+  .home_item-tree a,
+  .home_item-four a {
     font-size: 1.25rem;
   }
 }
@@ -448,7 +635,7 @@ header:hover {
   height: 50px;
   background: #000b1d;
   border-radius: 6px;
-  right: 5%;
+  right: 12%;
   bottom: 12%;
 
   z-index: 150;
@@ -508,6 +695,18 @@ header:hover {
   }
 }
 
+@media(max-width: 56.25rem) {
+  .sec-2_items p {
+    margin: 0 2rem 0 0;
+    font-size: 1.1rem;
+  }
+
+  #sec-item_two p {
+    margin: 0 0 0 2rem;
+    font-size: 1.1rem;
+  }
+}
+
 @media (max-width: 48rem) {
   #sec-2 {
     width: 100vw;
@@ -539,6 +738,7 @@ header:hover {
   }
 
   .sec-2_items p {
+    margin: 0 0 1rem 0;
     text-align: center;
   }
 
@@ -548,7 +748,7 @@ header:hover {
 
   #sec-item_two p {
     text-align: center;
-    margin-left: 0;
+    margin: 0 0 1rem 0;
   }
 }
 
@@ -648,7 +848,7 @@ header:hover {
 }
 
 .sec-3__item:hover {
-  background: #000b1d;
+  background: rgba(184, 134, 11, 0.9);
 }
 
 .sec-3__item h2 {
@@ -663,7 +863,10 @@ header:hover {
   margin: 0;
 }
 
-#sec-3 button {
+#opn_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   color: white;
   border: 3px solid white;
@@ -678,7 +881,7 @@ header:hover {
   transition: background 0.5s ease 0s, color 0.5s ease 0s;
 }
 
-.sec-3--items_main button:hover {
+#opn_btn:hover {
   background: white;
   color: #000b1d;
 }
@@ -816,6 +1019,17 @@ input[type="number"]::-webkit-inner-spin-button {
   }
 }
 
+@media (max-width: 53.75rem) {
+  .calc-items {
+    flex-direction: column;
+    align-items: center !important;
+  }
+
+  .calc-item {
+    margin: 1rem 0;
+  }
+}
+
 @media (max-width: 48rem) {
   #sec-3 {
     width: 100vw;
@@ -842,11 +1056,6 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 @media (max-width: 46.875rem) {
-  .calc-items {
-    flex-direction: column;
-    align-items: center !important;
-  }
-
   .calc-item {
     margin: 1rem 0;
   }
@@ -917,6 +1126,7 @@ input[type="number"]::-webkit-inner-spin-button {
   font-weight: 400;
   margin-top: 0;
   opacity: 0;
+  text-align: center;
 
   transform: translateY(120%);
   transition: opacity 1s ease 0.5s, transform 1s ease 0.5s;
@@ -974,32 +1184,61 @@ input[type="number"]::-webkit-inner-spin-button {
   transition: opacity 0.5s ease 0s, transform 0.5s ease 0s;
 }
 
-.sec-4__item button {
+#send_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 400px;
   height: 50px;
   margin: 0.75rem;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 1.25rem;
-  background: rgb(232, 240, 254);
-  border: 2px solid black;
+  background: none;
+  border-left: 2px solid black !important;
+  border-right: 2px solid black !important;
+  border: none;
+  outline: none;
   cursor: pointer;
 
   opacity: 0;
   transform: translateY(100%);
 
-  transition: opacity 0.5s ease 0s, transform 0.5s ease 0s;
+  transition: opacity 0.5s ease 0s, transform 0.5s ease 0s,
+    font-size 0.4s ease 0s;
+}
+
+#send_btn:hover {
+  font-size: 1.5rem;
+}
+
+#send_btn::before,
+#send_btn::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: black;
+
+  transition: width 0.4s ease 0s;
+}
+
+#send_btn::before {
+  transform: translateY(25px);
+}
+#send_btn::after {
+  transform: translateY(-25px);
+}
+
+#send_btn:hover::before,
+#send_btn:hover::after {
+  width: 101%;
 }
 
 .sec-4__item input._active,
 .sec-4__item textarea._active,
-.sec-4__item button._active {
+#send_btn._active {
   opacity: 1;
   transform: translateY(0);
-}
-
-.sec-4__item button:hover {
-  border-color: #000b1d;
-  color: #000b1d;
 }
 
 .messageSend {
@@ -1061,7 +1300,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
   .sec-4__item input,
   .sec-4__item textarea,
-  .sec-4__item button {
+  #send_btn {
     width: 300px;
   }
 

@@ -1,57 +1,156 @@
 const header = document.querySelector("header");
+const headerItemsMain = document.querySelector(".header_main--items");
+const headerItems = document.querySelector(".header__items");
+const headerItem = document.querySelector(".header__item");
 
-window.addEventListener("scroll", () => {
-  if (scrollY > 50) {
-    header.classList.add("header_down");
-  } else if (scrollY === 0) {
-    header.classList.remove("header_down");
-  }
-});
+const home = document.getElementById("home");
 
-const secItems = document.querySelector(".sec-item");
-secItems.style.transition = `transform 3s ease-in-out 0s`;
+let i = 0;
 
-function galery() {
-  secItems.style.transition = `transform 3s ease-in-out 0s`;
-
+function imgOne() {
+  newItem = document.createElement("div");
+  newItem.className = "home_item-one";
+  newItem.innerHTML = `
+  <h1>
+    Learn the story<br />
+    of the gold metal
+  </h1>
+  <a href="#sec-2">History</a>
+  `;
   setTimeout(() => {
-    secItems.style.transform = `translateX(-12.5%)`;
-  }, 4000);
+    newItem.classList.add("open-item-gallery");
+  }, 50);
+  document.getElementById("two").classList.remove("active");
+  document.getElementById("tree").classList.remove("active");
+  document.getElementById("four").classList.remove("active");
+  document.getElementById("one").classList.add("active");
 
-  setTimeout(() => {
-    secItems.style.transform = `translateX(-25%)`;
-  }, 9000);
-
-  setTimeout(() => {
-    secItems.style.transform = `translateX(-37.5%)`;
-  }, 14000);
-
-  setTimeout(() => {
-    secItems.style.transform = `translateX(-50%)`;
-  }, 19000);
-
-  setTimeout(() => {
-    secItems.style.transform = `translateX(-62.5%)`;
-  }, 24000);
-
-  setTimeout(() => {
-    secItems.style.transform = `translateX(-75%)`;
-  }, 29000);
-
-  setTimeout(() => {
-    secItems.style.transform = `translateX(-87.5%)`;
-  }, 34000);
+  home.append(newItem);
 }
 
-galery();
-
-setInterval(() => {
-  secItems.style.transform = `translateX(0%)`;
-  secItems.style.transition = `transform 7s ease-in-out 0s`;
+function imgTwo() {
+  newItem = document.createElement("div");
+  newItem.className = "home_item-two";
+  newItem.innerHTML = `
+  <h1>
+    Calculate how much you<br />
+    can earn on gold
+  </h1>
+  <a href="#sec-3">Calculate now</a>
+  `;
   setTimeout(() => {
-    galery();
-  }, 6000);
-}, 39000);
+    newItem.classList.add("open-item-gallery");
+  }, 50);
+  document.getElementById("one").classList.remove("active");
+  document.getElementById("tree").classList.remove("active");
+  document.getElementById("four").classList.remove("active");
+  document.getElementById("two").classList.add("active");
+
+  home.append(newItem);
+}
+
+function imgTree() {
+  newItem = document.createElement("div");
+  newItem.className = "home_item-tree";
+  newItem.innerHTML = `
+  <h1>
+    Contact us for more<br />
+    information on gold
+  </h1>
+  <a href="#sec-4">Contact us</a>
+  `;
+  setTimeout(() => {
+    newItem.classList.add("open-item-gallery");
+  }, 50);
+  document.getElementById("one").classList.remove("active");
+  document.getElementById("two").classList.remove("active");
+  document.getElementById("four").classList.remove("active");
+  document.getElementById("tree").classList.add("active");
+
+  home.append(newItem);
+}
+
+function imgFour() {
+  newItem = document.createElement("div");
+  newItem.className = "home_item-four";
+  newItem.innerHTML = `
+  <h1>
+    Since the discovery of gold,<br />
+    people have mined <br />about 160 tons of gold.
+  </h1>
+  `;
+  setTimeout(() => {
+    newItem.classList.add("open-item-gallery");
+  }, 50);
+  document.getElementById("one").classList.remove("active");
+  document.getElementById("two").classList.remove("active");
+  document.getElementById("tree").classList.remove("active");
+  document.getElementById("four").classList.add("active");
+
+  home.append(newItem);
+}
+
+imgOne();
+
+document.getElementById("one").addEventListener("click", () => {
+  imgOne();
+
+  i = 0;
+});
+
+document.getElementById("two").addEventListener("click", () => {
+  imgTwo();
+
+  i = 1;
+});
+
+document.getElementById("tree").addEventListener("click", () => {
+  imgTree();
+
+  i = 2;
+});
+
+document.getElementById("four").addEventListener("click", () => {
+  imgFour();
+
+  i = 3;
+});
+
+document.getElementById("btn_right").addEventListener("click", () => {
+  if (i === 0) {
+    imgTwo();
+    i++;
+  } else if (i === 1) {
+    imgTree();
+    i++;
+  } else if (i === 2) {
+    imgFour();
+    i++;
+  } else if (i === 3) {
+    imgOne();
+    i = 0;
+  }
+
+  console.log(i);
+});
+
+document.getElementById("btn_left").addEventListener("click", () => {
+  if (i === 0) {
+    imgFour();
+    i = 3;
+  } else if (i === 1) {
+    imgOne();
+    i--;
+  } else if (i === 2) {
+    imgTwo();
+    i--;
+  } else if (i === 3) {
+    imgTree();
+    i--;
+  }
+
+  console.log(i);
+});
 
 // SCROLL
 
@@ -174,20 +273,20 @@ function openCalc() {
   }
 }
 
-// function sampOpenCalc() {
-//   if (!testBtnCalc) {
-//     calc.style.transform = "scale(1)";
-//     secTree.classList.add("padd-sec-3");
-//     setTimeout(() => {
-//       calc.classList.add("open_calc");
-//     }, 500);
-//     setTimeout(() => {
-//       calcItems.classList.add("open_calc-items");
-//     }, 700);
-//     testBtnCalc = true;
-//     console.log(testBtnCalc);
-//   }
-// }
+function sampOpenCalc() {
+  if (!testBtnCalc) {
+    calc.style.transform = "scale(1)";
+    secTree.classList.add("padd-sec-3");
+    setTimeout(() => {
+      calc.classList.add("open_calc");
+    }, 500);
+    setTimeout(() => {
+      calcItems.classList.add("open_calc-items");
+    }, 700);
+    testBtnCalc = true;
+    console.log(testBtnCalc);
+  }
+}
 
 opnBtn.addEventListener("click", () => {
   openCalc();
@@ -289,10 +388,10 @@ window.addEventListener("scroll", () => {
 const menuBtn = document.querySelector(".menu-btn");
 const menu = document.querySelector(".mobile__menu");
 
-const itemMenuOne = document.getElementById("one");
-const itemMenuTwo = document.getElementById("two");
-const itemMenuTree = document.getElementById("tree");
-const itemMenuFour = document.getElementById("four");
+const itemMenuOne = document.getElementById("one-item");
+const itemMenuTwo = document.getElementById("two-item");
+const itemMenuTree = document.getElementById("tree-item");
+const itemMenuFour = document.getElementById("four-item");
 
 let menuOpen = false;
 

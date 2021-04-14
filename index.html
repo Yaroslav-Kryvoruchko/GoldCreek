@@ -9,25 +9,25 @@
     <script src="app.js" defer></script>
   </head>
   <body>
-    <header>
+    <header class="_anim-items">
       <div class="header_main--items">
-        <ul class="header__items">
-          <a href="index.html"
+        <ul class="header__items-one">
+          <a href="#home"
             ><li class="header__item"><img src="images/logo.svg" alt="" /></li
           ></a>
         </ul>
         <ul class="header__items">
           <li class="header__item">
-            <a href="index.html">Home</a>
+            <a href="#home" id="main">Home</a>
           </li>
           <li class="header__item">
-            <a href="#sec-2">History</a>
+            <a href="#sec-2" id="history">History</a>
           </li>
           <li class="header__item">
-            <a href="#sec-3">Samples</a>
+            <a href="#sec-3" id="sample">Samples</a>
           </li>
           <li class="header__item">
-            <a href="#sec-4">Contact us</a>
+            <a href="#sec-4" id="contact">Contact us</a>
           </li>
         </ul>
       </div>
@@ -43,8 +43,43 @@
       </div>
     </header>
     <main>
-      <section id="sec-1">
-        <ul class="sec-items">
+      <section id="home">
+        <ul class="home-items">
+          <li class="home-item">
+            <span id="one"></span>
+          </li>
+          <li class="home-item">
+            <span id="two"></span>
+          </li>
+          <li class="home-item">
+            <span id="tree"></span>
+          </li>
+          <li class="home-item">
+            <span id="four"></span>
+          </li>
+        </ul>
+        <span id="btn_left"></span>
+        <span id="btn_right"></span>
+
+        <div class="mobile__menu">
+          <ul class="mobile__menu__items">
+            <li class="mobile__menu__item" id="one-item">
+              <a href="index.html">Home</a>
+            </li>
+            <li class="mobile__menu__item" id="two-item">
+              <a href="#sec-2">History</a>
+            </li>
+            <li class="mobile__menu__item" id="tree-item">
+              <a href="#sec-3">Samples</a>
+            </li>
+            <li class="mobile__menu__item" id="four-item">
+              <a href="#sec-4">Contact us</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- <section class="_anim-items" id="sec-1">
+        <ul class="sec-items _anim-items">
           <li class="sec-item">
             <div class="sec-1__item">
               <h1>
@@ -118,8 +153,8 @@
             </li>
           </ul>
         </div>
-      </section>
-      <a href="#sec-1"
+      </section> -->
+      <a href="#home"
         ><div class="up__btn"><span id="arrow"></span></div
       ></a>
       <section id="sec-2">
@@ -135,7 +170,7 @@
           </p>
           <img src="images/Headlines05_360_200115.jpg" alt=":D" />
         </div>
-        <div class="sec-2_items _anim-items _anim-no-hide" id="sec-item_two">
+        <div class="sec-2_items _anim-items" id="sec-item_two">
           <img src="images/933709.jpg" alt=":D" />
           <p>
             A total of 197,576 tonnes of gold exists above ground, as of 2019.
@@ -222,6 +257,7 @@
                 name=""
                 id="grams"
                 min="0"
+                max="1000000000"
                 placeholder="2.45"
               />
             </div>
