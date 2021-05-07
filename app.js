@@ -202,6 +202,10 @@ const calcBtn = document.getElementById("calc");
 const grams = document.getElementById("grams");
 const price = document.getElementById("price");
 
+grams.oninput = function () {
+  if (this.value.length > 8) this.value = this.value.substr(0, 8);
+};
+
 function goldPrice() {
   if (sample.value === "375") {
     const total = grams.value * 21.61;
@@ -233,7 +237,11 @@ function goldPrice() {
 }
 
 function out(totals) {
-  price.textContent = totals + "$";
+  if (totals < 0) {
+    price.textContent = Math.floor(totals * 100) / -100 + "$";
+  } else {
+    price.textContent = Math.floor(totals * 100) / 100 + "$";
+  }
 }
 
 calcBtn.addEventListener("click", goldPrice);
@@ -256,7 +264,6 @@ function openCalc() {
     setTimeout(() => {
       testBtnCalc = true;
     }, 1200);
-    opnBtn.textContent = "Close Calculate";
     console.log(testBtnCalc);
   } else {
     calcItems.classList.remove("open_calc-items");
@@ -266,7 +273,6 @@ function openCalc() {
     setTimeout(() => {
       secTree.classList.remove("padd-sec-3");
     }, 1200);
-    opnBtn.textContent = "Open Calculate";
     setTimeout(() => {
       testBtnCalc = false;
     }, 1200);
@@ -290,6 +296,8 @@ function sampOpenCalc() {
 
 opnBtn.addEventListener("click", () => {
   openCalc();
+  opnBtn.disabled = true;
+  opnBtn.style.opacity = "0";
 });
 
 const sampOne = document.getElementById("samp-one");
@@ -301,38 +309,50 @@ const sampSix = document.getElementById("samp-six");
 
 sampOne.addEventListener("click", () => {
   sample.value = "375";
-  opnBtn.textContent = "Close Calculate";
+  opnBtn.disabled = true;
+  opnBtn.style.opacity = "0";
   sampOpenCalc();
+  calc.scrollIntoView((top = false));
 });
 
 sampTwo.addEventListener("click", () => {
   sample.value = "583";
-  opnBtn.textContent = "Close Calculate";
+  opnBtn.disabled = true;
+  opnBtn.style.opacity = "0";
   sampOpenCalc();
+  calc.scrollIntoView((top = false));
 });
 
 sampTree.addEventListener("click", () => {
   sample.value = "585";
-  opnBtn.textContent = "Close Calculate";
+  opnBtn.disabled = true;
+  opnBtn.style.opacity = "0";
   sampOpenCalc();
+  calc.scrollIntoView((top = false));
 });
 
 sampFour.addEventListener("click", () => {
   sample.value = "750";
-  opnBtn.textContent = "Close Calculate";
+  opnBtn.disabled = true;
+  opnBtn.style.opacity = "0";
   sampOpenCalc();
+  calc.scrollIntoView((top = false));
 });
 
 sampFive.addEventListener("click", () => {
   sample.value = "958";
-  opnBtn.textContent = "Close Calculate";
+  opnBtn.disabled = true;
+  opnBtn.style.opacity = "0";
   sampOpenCalc();
+  calc.scrollIntoView((top = false));
 });
 
 sampSix.addEventListener("click", () => {
   sample.value = "999";
-  opnBtn.textContent = "Close Calculate";
+  opnBtn.disabled = true;
+  opnBtn.style.opacity = "0";
   sampOpenCalc();
+  calc.scrollIntoView((top = false));
 });
 
 // Contact us
