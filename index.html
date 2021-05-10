@@ -78,82 +78,6 @@
           </ul>
         </div>
       </section>
-      <!-- <section class="_anim-items" id="sec-1">
-        <ul class="sec-items _anim-items">
-          <li class="sec-item">
-            <div class="sec-1__item">
-              <h1>
-                Learn the story<br />
-                of the gold metal
-              </h1>
-              <a href="#sec-2">History</a>
-            </div>
-            <div class="sec-1__item" id="item_two">
-              <h1>
-                Calculate how much you<br />
-                can earn on gold
-              </h1>
-              <a href="#sec-3">Calculate now</a>
-            </div>
-            <div class="sec-1__item" id="item_tree">
-              <h1>
-                Contact us for more<br />
-                information on gold
-              </h1>
-              <a href="#sec-4">Contact us</a>
-            </div>
-            <div class="sec-1__item" id="item_four">
-              <h1>
-                Since the discovery of gold,<br />
-                people have mined <br />about 160 tons of gold.
-              </h1>
-            </div>
-            <div class="sec-1__item">
-              <h1>
-                Learn the story<br />
-                of the gold metal
-              </h1>
-              <a href="">History</a>
-            </div>
-            <div class="sec-1__item" id="item_two">
-              <h1>
-                Calculate how much you<br />
-                can earn on gold
-              </h1>
-              <a href="">Calculate now</a>
-            </div>
-            <div class="sec-1__item" id="item_tree">
-              <h1>
-                Contact us for more<br />
-                information on gold
-              </h1>
-              <a href="">Contact us</a>
-            </div>
-            <div class="sec-1__item" id="item_four">
-              <h1>
-                Gold is mentioned in the Bible at<br />
-                least four hundred times.
-              </h1>
-            </div>
-          </li>
-        </ul>
-        <div class="mobile__menu">
-          <ul class="mobile__menu__items">
-            <li class="mobile__menu__item" id="one">
-              <a href="index.html">Home</a>
-            </li>
-            <li class="mobile__menu__item" id="two">
-              <a href="#sec-2">History</a>
-            </li>
-            <li class="mobile__menu__item" id="tree">
-              <a href="#sec-3">Samples</a>
-            </li>
-            <li class="mobile__menu__item" id="four">
-              <a href="#sec-4">Contact us</a>
-            </li>
-          </ul>
-        </div>
-      </section> -->
       <a href="#home"
         ><div class="up__btn"><span id="arrow"></span></div
       ></a>
@@ -236,7 +160,7 @@
             </li>
           </ul>
         </div>
-        <button id="opn_btn">Open Calculate</button>
+        <button id="opn_btn">Open Calculator</button>
         <div class="calc">
           <div class="calc-items">
             <div class="calc-item">
@@ -256,6 +180,7 @@
                 type="number"
                 name=""
                 id="grams"
+                onkeydown="return specialText(this, event)"
                 max="1000000000"
                 min="0"
                 placeholder="2.45"

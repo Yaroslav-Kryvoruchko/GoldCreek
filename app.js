@@ -206,6 +206,17 @@ grams.oninput = function () {
   if (this.value.length > 8) this.value = this.value.substr(0, 8);
 };
 
+function specialText(element, event) {
+  if (
+    event.keyCode == 187 ||
+    event.keyCode == 189 ||
+    event.keyCode == 109 ||
+    event.keyCode == 107
+  ) {
+    return false;
+  }
+}
+
 function goldPrice() {
   if (sample.value === "375") {
     const total = grams.value * 21.61;
@@ -237,11 +248,7 @@ function goldPrice() {
 }
 
 function out(totals) {
-  if (totals < 0) {
-    price.textContent = Math.floor(totals * 100) / -100 + "$";
-  } else {
-    price.textContent = Math.floor(totals * 100) / 100 + "$";
-  }
+  price.textContent = Math.floor(totals * 100) / 100 + "$";
 }
 
 calcBtn.addEventListener("click", goldPrice);
@@ -417,43 +424,56 @@ let menuOpen = false;
 
 menuBtn.addEventListener("click", () => {
   if (!menuOpen) {
-    menuBtn.classList.add("open");
-    setTimeout(() => {
-      menu.classList.add("open_menu");
-    }, 100);
-    setTimeout(() => {
-      itemMenuOne.classList.add("open_menu-items");
-    }, 700);
-    setTimeout(() => {
-      itemMenuTwo.classList.add("open_menu-items");
-    }, 800);
-    setTimeout(() => {
-      itemMenuTree.classList.add("open_menu-items");
-    }, 900);
-    setTimeout(() => {
-      itemMenuFour.classList.add("open_menu-items");
-    }, 1000);
-    menuOpen = true;
-  } else {
-    menuBtn.classList.remove("open");
-    setTimeout(() => {
-      itemMenuFour.classList.remove("open_menu-items");
-    }, 100);
-    setTimeout(() => {
-      itemMenuTree.classList.remove("open_menu-items");
-    }, 200);
-    setTimeout(() => {
-      itemMenuTwo.classList.remove("open_menu-items");
-    }, 300);
-    setTimeout(() => {
-      itemMenuOne.classList.remove("open_menu-items");
-    }, 400);
-    setTimeout(() => {
-      menu.classList.remove("open_menu");
-    }, 600);
-    menuOpen = false;
+    mobileMenuOpen();
+  } else if (menuOpen == true) {
+    mobileMenuClose();
   }
 });
+
+function mobileMenuOpen() {
+  menuBtn.classList.add("open");
+  setTimeout(() => {
+    menu.classList.add("open_menu");
+  }, 100);
+  setTimeout(() => {
+    itemMenuOne.classList.add("open_menu-items");
+  }, 700);
+  setTimeout(() => {
+    itemMenuTwo.classList.add("open_menu-items");
+  }, 800);
+  setTimeout(() => {
+    itemMenuTree.classList.add("open_menu-items");
+  }, 900);
+  setTimeout(() => {
+    itemMenuFour.classList.add("open_menu-items");
+  }, 1000);
+  menuOpen = true;
+}
+
+function mobileMenuClose() {
+  menuBtn.classList.remove("open");
+  setTimeout(() => {
+    itemMenuFour.classList.remove("open_menu-items");
+  }, 100);
+  setTimeout(() => {
+    itemMenuTree.classList.remove("open_menu-items");
+  }, 200);
+  setTimeout(() => {
+    itemMenuTwo.classList.remove("open_menu-items");
+  }, 300);
+  setTimeout(() => {
+    itemMenuOne.classList.remove("open_menu-items");
+  }, 400);
+  setTimeout(() => {
+    menu.classList.add("close_menu");
+  }, 600);
+  setTimeout(() => {
+    menu.classList.remove("close_menu");
+    menu.classList.remove("open_menu");
+  }, 1100);
+
+  menuOpen = false;
+}
 
 window.addEventListener("scroll", () => {
   if (scrollY > 50) {
