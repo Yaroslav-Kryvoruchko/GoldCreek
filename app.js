@@ -425,74 +425,49 @@ let menuOpen = false;
 menuBtn.addEventListener("click", () => {
   if (!menuOpen) {
     mobileMenuOpen();
-  } else if (menuOpen == true) {
+    menu.classList.remove("close_menu", "open_menu");
+  } else if (menuOpen === true) {
     mobileMenuClose();
   }
 });
 
+function openCloseMenu(element, action, clsName, time) {
+  if (!action) {
+    setTimeout(() => {
+      element.classList.remove(clsName);
+    }, time);
+  } else {
+    setTimeout(() => {
+      element.classList.add(clsName);
+    }, time);
+  }
+}
+
 function mobileMenuOpen() {
-  menuBtn.classList.add("open");
-  setTimeout(() => {
-    menu.classList.add("open_menu");
-  }, 100);
-  setTimeout(() => {
-    itemMenuOne.classList.add("open_menu-items");
-  }, 700);
-  setTimeout(() => {
-    itemMenuTwo.classList.add("open_menu-items");
-  }, 800);
-  setTimeout(() => {
-    itemMenuTree.classList.add("open_menu-items");
-  }, 900);
-  setTimeout(() => {
-    itemMenuFour.classList.add("open_menu-items");
-  }, 1000);
+  openCloseMenu(menuBtn, true, "open", 0);
+  openCloseMenu(menu, true, "open_menu", 100);
+  openCloseMenu(itemMenuOne, true, "open_menu-items", 700);
+  openCloseMenu(itemMenuTwo, true, "open_menu-items", 800);
+  openCloseMenu(itemMenuTree, true, "open_menu-items", 900);
+  openCloseMenu(itemMenuFour, true, "open_menu-items", 1000);
+
   menuOpen = true;
 }
 
 function mobileMenuClose() {
-  menuBtn.classList.remove("open");
-  setTimeout(() => {
-    itemMenuFour.classList.remove("open_menu-items");
-  }, 100);
-  setTimeout(() => {
-    itemMenuTree.classList.remove("open_menu-items");
-  }, 200);
-  setTimeout(() => {
-    itemMenuTwo.classList.remove("open_menu-items");
-  }, 300);
-  setTimeout(() => {
-    itemMenuOne.classList.remove("open_menu-items");
-  }, 400);
-  setTimeout(() => {
-    menu.classList.add("close_menu");
-  }, 600);
-  setTimeout(() => {
-    menu.classList.remove("close_menu");
-    menu.classList.remove("open_menu");
-  }, 1100);
+  openCloseMenu(menuBtn, false, "open", 0);
+  openCloseMenu(itemMenuFour, false, "open_menu-items", 100);
+  openCloseMenu(itemMenuTree, false, "open_menu-items", 200);
+  openCloseMenu(itemMenuTwo, false, "open_menu-items", 300);
+  openCloseMenu(itemMenuOne, false, "open_menu-items", 400);
+  openCloseMenu(menu, true, "close_menu", 600);
 
   menuOpen = false;
 }
 
+
 window.addEventListener("scroll", () => {
-  if (scrollY > 50) {
-    menuBtn.classList.remove("open");
-    setTimeout(() => {
-      itemMenuFour.classList.remove("open_menu-items");
-    }, 100);
-    setTimeout(() => {
-      itemMenuTree.classList.remove("open_menu-items");
-    }, 200);
-    setTimeout(() => {
-      itemMenuTwo.classList.remove("open_menu-items");
-    }, 300);
-    setTimeout(() => {
-      itemMenuOne.classList.remove("open_menu-items");
-    }, 400);
-    setTimeout(() => {
-      menu.classList.remove("open_menu");
-    }, 600);
-    menuOpen = false;
+  if (scrollY > 50 && menuOpen === true) {
+    mobileMenuClose();
   }
 });
