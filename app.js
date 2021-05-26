@@ -314,53 +314,25 @@ const sampFour = document.getElementById("samp-four");
 const sampFive = document.getElementById("samp-five");
 const sampSix = document.getElementById("samp-six");
 
-sampOne.addEventListener("click", () => {
-  sample.value = "375";
+function sampleValue(sampleNumber) {
+  sample.value = sampleNumber;
   opnBtn.disabled = true;
   opnBtn.style.opacity = "0";
   sampOpenCalc();
   calc.scrollIntoView((top = false));
-});
+}
 
-sampTwo.addEventListener("click", () => {
-  sample.value = "583";
-  opnBtn.disabled = true;
-  opnBtn.style.opacity = "0";
-  sampOpenCalc();
-  calc.scrollIntoView((top = false));
-});
+sampOne.addEventListener("click", sampleValue("375"));
 
-sampTree.addEventListener("click", () => {
-  sample.value = "585";
-  opnBtn.disabled = true;
-  opnBtn.style.opacity = "0";
-  sampOpenCalc();
-  calc.scrollIntoView((top = false));
-});
+sampTwo.addEventListener("click", sampleValue("583"));
 
-sampFour.addEventListener("click", () => {
-  sample.value = "750";
-  opnBtn.disabled = true;
-  opnBtn.style.opacity = "0";
-  sampOpenCalc();
-  calc.scrollIntoView((top = false));
-});
+sampTree.addEventListener("click", sampleValue("585"));
 
-sampFive.addEventListener("click", () => {
-  sample.value = "958";
-  opnBtn.disabled = true;
-  opnBtn.style.opacity = "0";
-  sampOpenCalc();
-  calc.scrollIntoView((top = false));
-});
+sampFour.addEventListener("click", sampleValue("750"));
 
-sampSix.addEventListener("click", () => {
-  sample.value = "999";
-  opnBtn.disabled = true;
-  opnBtn.style.opacity = "0";
-  sampOpenCalc();
-  calc.scrollIntoView((top = false));
-});
+sampFive.addEventListener("click", sampleValue("958"));
+
+sampSix.addEventListener("click", sampleValue("999"));
 
 // Contact us
 
@@ -464,7 +436,6 @@ function mobileMenuClose() {
 
   menuOpen = false;
 }
-
 
 window.addEventListener("scroll", () => {
   if (scrollY > 50 && menuOpen === true) {
