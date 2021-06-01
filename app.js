@@ -286,21 +286,6 @@ function openCalc() {
   }
 }
 
-function sampOpenCalc() {
-  if (!testBtnCalc) {
-    calc.style.transform = "scale(1)";
-    secTree.classList.add("padd-sec-3");
-    setTimeout(() => {
-      calc.classList.add("open_calc");
-    }, 500);
-    setTimeout(() => {
-      calcItems.classList.add("open_calc-items");
-    }, 700);
-    testBtnCalc = true;
-    console.log(testBtnCalc);
-  }
-}
-
 opnBtn.addEventListener("click", () => {
   openCalc();
   opnBtn.disabled = true;
@@ -316,9 +301,6 @@ const sampSix = document.getElementById("samp-six");
 
 function sampleValue(sampleNumber) {
   sample.value = sampleNumber;
-  opnBtn.disabled = true;
-  opnBtn.style.opacity = "0";
-  sampOpenCalc();
   calc.scrollIntoView((top = false));
 }
 
