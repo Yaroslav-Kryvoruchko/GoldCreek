@@ -399,7 +399,7 @@ header {
 
 #one,
 #two,
-#tree,
+#three,
 #four {
   position: absolute;
   width: 20px;
@@ -416,7 +416,7 @@ header {
 
 #one:hover,
 #two:hover,
-#tree:hover,
+#three:hover,
 #four:hover {
   background: white;
   border: 1px solid white;
@@ -460,7 +460,7 @@ header {
   transition: opacity 1s ease 0s;
 }
 
-.home_item-tree {
+.home_item-three {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -500,7 +500,7 @@ header {
 
 .home_item-one h1,
 .home_item-two h1,
-.home_item-tree h1,
+.home_item-three h1,
 .home_item-four h1 {
   font-size: 4.5rem;
   color: white;
@@ -512,7 +512,7 @@ header {
 
 .home_item-one a,
 .home_item-two a,
-.home_item-tree a,
+.home_item-three a,
 .home_item-four a {
   background: transparent;
   border: 3px solid white;
@@ -529,7 +529,7 @@ header {
 
 .home_item-one a:hover,
 .home_item-two a:hover,
-.home_item-tree a:hover,
+.home_item-three a:hover,
 .home_item-four a:hover {
   color: #000b1d;
   background: rgba(255, 255, 255, 1);
@@ -543,7 +543,7 @@ header {
 @media (max-width: 62.5rem) {
   .home_item-one h1,
   .home_item-two h1,
-  .home_item-tree h1,
+  .home_item-three h1,
   .home_item-four h1 {
     font-size: 3.5rem;
   }
@@ -552,7 +552,7 @@ header {
 @media (max-width: 48rem) {
   .home_item-one h1,
   .home_item-two h1,
-  .home_item-tree h1,
+  .home_item-three h1,
   .home_item-four h1 {
     font-size: 3.5rem;
     padding: 0 15px;
@@ -560,7 +560,7 @@ header {
 
   .home_item-one a,
   .home_item-two a,
-  .home_item-tree a,
+  .home_item-three a,
   .home_item-four a {
     font-size: 1.5rem;
   }
@@ -578,7 +578,7 @@ header {
 @media (max-width: 375px) {
   .home_item-one h1,
   .home_item-two h1,
-  .home_item-tree h1,
+  .home_item-three h1,
   .home_item-four h1 {
     font-size: 2.5rem;
     padding: 0 15px;
@@ -586,7 +586,7 @@ header {
 
   .home_item-one a,
   .home_item-two a,
-  .home_item-tree a,
+  .home_item-three a,
   .home_item-four a {
     font-size: 1.25rem;
   }

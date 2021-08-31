@@ -1,127 +1,141 @@
-const header = document.querySelector("header");
-const headerItemsMain = document.querySelector(".header_main--items");
-const headerItems = document.querySelector(".header__items");
-const headerItem = document.querySelector(".header__item");
+const header = document.querySelector('header');
+const headerItemsMain = document.querySelector('.header_main--items');
+const headerItems = document.querySelector('.header__items');
+const headerItem = document.querySelector('.header__item');
 
-const home = document.getElementById("home");
+const home = document.getElementById('home');
 
 let i = 0;
 
-function imgOne() {
-  newItem = document.createElement("div");
-  newItem.className = "home_item-one";
-  newItem.innerHTML = `
-  <h1>
-    Learn the story<br />
-    of the gold metal
-  </h1>
-  <a href="#sec-2">History</a>
-  `;
+const createImage = (cls, inrHTML) => {
+  newItem = document.createElement('div');
+  newItem.className = cls;
+  newItem.innerHTML = inrHTML;
   setTimeout(() => {
-    newItem.classList.add("open-item-gallery");
+    newItem.classList.add('open-item-gallery');
   }, 50);
-  document.getElementById("two").classList.remove("active");
-  document.getElementById("tree").classList.remove("active");
-  document.getElementById("four").classList.remove("active");
-  document.getElementById("one").classList.add("active");
 
   home.append(newItem);
-}
+};
 
-function imgTwo() {
-  newItem = document.createElement("div");
-  newItem.className = "home_item-two";
-  newItem.innerHTML = `
-  <h1>
-    Calculate how much you<br />
-    can earn on gold
-  </h1>
-  <a href="#sec-3">Calculate now</a>
-  `;
-  setTimeout(() => {
-    newItem.classList.add("open-item-gallery");
-  }, 50);
-  document.getElementById("one").classList.remove("active");
-  document.getElementById("tree").classList.remove("active");
-  document.getElementById("four").classList.remove("active");
-  document.getElementById("two").classList.add("active");
+const imgOne = () => {
+  createImage(
+    'home_item-one',
+    `<h1>
+      Learn the story<br />
+      of the gold metal
+     </h1>
+     <a href="#sec-2">History</a>
+    `
+  );
 
-  home.append(newItem);
-}
+  document.getElementById('two').classList.remove('active');
+  document.getElementById('three').classList.remove('active');
+  document.getElementById('four').classList.remove('active');
+  document.getElementById('one').classList.add('active');
+};
 
-function imgTree() {
-  newItem = document.createElement("div");
-  newItem.className = "home_item-tree";
-  newItem.innerHTML = `
-  <h1>
-    Contact us for more<br />
-    information on gold
-  </h1>
-  <a href="#sec-4">Contact us</a>
-  `;
-  setTimeout(() => {
-    newItem.classList.add("open-item-gallery");
-  }, 50);
-  document.getElementById("one").classList.remove("active");
-  document.getElementById("two").classList.remove("active");
-  document.getElementById("four").classList.remove("active");
-  document.getElementById("tree").classList.add("active");
+const imgTwo = () => {
+  createImage(
+    'home_item-two',
+    `<h1>
+        Calculate how much you<br />
+        can earn on gold
+    </h1>
+    <a href="#sec-3">Calculate now</a>
+    `
+  );
+  document.getElementById('one').classList.remove('active');
+  document.getElementById('three').classList.remove('active');
+  document.getElementById('four').classList.remove('active');
+  document.getElementById('two').classList.add('active');
+};
 
-  home.append(newItem);
-}
+const imgThree = () => {
+  createImage(
+    'home_item-three',
+    `<h1>
+        Contact us for more<br />
+        information on gold
+     </h1>
+     <a href="#sec-4">Contact us</a>
+    `
+  );
+  document.getElementById('one').classList.remove('active');
+  document.getElementById('two').classList.remove('active');
+  document.getElementById('four').classList.remove('active');
+  document.getElementById('three').classList.add('active');
+};
 
-function imgFour() {
-  newItem = document.createElement("div");
-  newItem.className = "home_item-four";
-  newItem.innerHTML = `
-  <h1>
-    Since the discovery of gold,<br />
-    people have mined <br />about 160 tons of gold.
-  </h1>
-  `;
-  setTimeout(() => {
-    newItem.classList.add("open-item-gallery");
-  }, 50);
-  document.getElementById("one").classList.remove("active");
-  document.getElementById("two").classList.remove("active");
-  document.getElementById("tree").classList.remove("active");
-  document.getElementById("four").classList.add("active");
-
-  home.append(newItem);
-}
+const imgFour = () => {
+  createImage(
+    'home_item-four',
+    `<h1>
+        Since the discovery of gold,<br />
+        people have mined <br />about 160 tons of gold.
+     </h1>
+    `
+  );
+  document.getElementById('one').classList.remove('active');
+  document.getElementById('two').classList.remove('active');
+  document.getElementById('three').classList.remove('active');
+  document.getElementById('four').classList.add('active');
+};
 
 imgOne();
 
-document.getElementById("one").addEventListener("click", () => {
-  imgOne();
+const sliderBtn = document.querySelector('.home-items');
+const sliderBtnItems = sliderBtn.querySelectorAll('li');
 
-  i = 0;
+const sliderItemArray = [
+  {
+    title: 'one',
+    startFunc() {
+      imgOne();
+    },
+    meter: 0,
+  },
+  {
+    title: 'two',
+    startFunc() {
+      imgTwo();
+    },
+    meter: 1,
+  },
+  {
+    title: 'three',
+    startFunc() {
+      imgThree();
+    },
+    meter: 2,
+  },
+  {
+    title: 'four',
+    startFunc() {
+      imgFour();
+    },
+    meter: 3,
+  },
+];
+
+sliderBtnItems.forEach((el) => {
+  el.addEventListener('click', () => {
+    const sliderItem = el.querySelector('span');
+    for (let item of sliderItemArray) {
+      if (sliderItem.id === item.title) {
+        item.startFunc();
+        i = item.meter;
+      }
+    }
+  });
 });
 
-document.getElementById("two").addEventListener("click", () => {
-  imgTwo();
-
-  i = 1;
-});
-
-document.getElementById("tree").addEventListener("click", () => {
-  imgTree();
-
-  i = 2;
-});
-
-document.getElementById("four").addEventListener("click", () => {
-  imgFour();
-
-  i = 3;
-});
-
-document.getElementById("btn_right").addEventListener("click", () => {
+document.getElementById('btn_right').addEventListener('click', () => {
   if (i === 0) {
     imgTwo();
     i++;
   } else if (i === 1) {
-    imgTree();
+    imgThree();
     i++;
   } else if (i === 2) {
     imgFour();
@@ -130,11 +144,9 @@ document.getElementById("btn_right").addEventListener("click", () => {
     imgOne();
     i = 0;
   }
-
-  console.log(i);
 });
 
-document.getElementById("btn_left").addEventListener("click", () => {
+document.getElementById('btn_left').addEventListener('click', () => {
   if (i === 0) {
     imgFour();
     i = 3;
@@ -145,19 +157,18 @@ document.getElementById("btn_left").addEventListener("click", () => {
     imgTwo();
     i--;
   } else if (i === 3) {
-    imgTree();
+    imgThree();
     i--;
   }
-
-  console.log(i);
 });
 
 // SCROLL
 
-const animItems = document.querySelectorAll("._anim-items");
+const animItems = document.querySelectorAll('._anim-items');
 
 if (animItems.length > 0) {
-  window.addEventListener("scroll", animOnScroll);
+  window.addEventListener('scroll', animOnScroll);
+
   function animOnScroll() {
     for (let index = 0; index < animItems.length; index++) {
       const animItem = animItems[index];
@@ -175,21 +186,21 @@ if (animItems.length > 0) {
         pageYOffset > animItemOffSet - animItemPoint &&
         pageYOffset < animItemOffSet + animItemHight
       ) {
-        animItem.classList.add("_active");
+        animItem.classList.add('_active');
       } else {
-        if (!animItem.classList.contains("_anim-no-hide")) {
-          animItem.classList.remove("_active");
+        if (!animItem.classList.contains('_anim-no-hide')) {
+          animItem.classList.remove('_active');
         }
       }
     }
   }
 
-  function offset(el) {
+  const offset = (el) => {
     const rect = el.getBoundingClientRect(),
       scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
       scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
-  }
+  };
   setTimeout(() => {
     animOnScroll();
   }, 300);
@@ -197,16 +208,16 @@ if (animItems.length > 0) {
 
 // Calculate Logic
 
-const sample = document.getElementById("samples");
-const calcBtn = document.getElementById("calc");
-const grams = document.getElementById("grams");
-const price = document.getElementById("price");
+const sample = document.getElementById('samples');
+const calcBtn = document.getElementById('calc');
+const grams = document.getElementById('grams');
+const price = document.getElementById('price');
 
 grams.oninput = function () {
   if (this.value.length > 8) this.value = this.value.substr(0, 8);
 };
 
-function specialText(element, event) {
+const specialText = (element, event) => {
   if (
     event.keyCode == 187 ||
     event.keyCode == 189 ||
@@ -215,117 +226,80 @@ function specialText(element, event) {
   ) {
     return false;
   }
-}
+};
 
-function goldPrice() {
-  if (sample.value === "375") {
-    const total = grams.value * 21.61;
-    out(total);
-    console.log(total);
-  } else if (sample.value === "583") {
-    const total = grams.value * 33.64;
-    out(total);
-    console.log(total);
-  } else if (sample.value === "585") {
-    const total = grams.value * 36.93;
-    out(total);
-    console.log(total);
-  } else if (sample.value === "750") {
-    const total = grams.value * 47.46;
-    out(total);
-    console.log(total);
-  } else if (sample.value === "958") {
-    const total = grams.value * 55.12;
-    out(total);
-    console.log(total);
-  } else if (sample.value === "999") {
-    const total = grams.value * 56.07;
-    out(total);
-    console.log(total);
+const sampleItemsInfo = [
+  { title: '375', coefficient: 21.61 },
+  { title: '583', coefficient: 33.64 },
+  { title: '585', coefficient: 36.93 },
+  { title: '750', coefficient: 47.46 },
+  { title: '958', coefficient: 55.12 },
+  { title: '999', coefficient: 56.07 },
+];
+
+const goldPrice = () => {
+  for (let key of sampleItemsInfo) {
+    if (sample.value === key.title) {
+      const total = grams.value * key.coefficient;
+      out(total);
+    }
   }
-  console.log(grams.value);
-  console.log(sample.value);
-}
+};
 
-function out(totals) {
-  price.textContent = Math.floor(totals * 100) / 100 + "$";
-}
+const out = (totals) => {
+  price.textContent = Math.floor(totals * 100) / 100 + '$';
+};
 
-calcBtn.addEventListener("click", goldPrice);
+calcBtn.addEventListener('click', goldPrice);
 
-const opnBtn = document.getElementById("opn_btn");
-const calc = document.querySelector(".calc");
-const calcItems = document.querySelector(".calc-items");
-const secTree = document.getElementById("sec-3");
+const opnBtn = document.getElementById('opn_btn');
+const calc = document.querySelector('.calc');
+const calcItems = document.querySelector('.calc-items');
 
-let testBtnCalc = false;
-
-function openCalc() {
-  if (!testBtnCalc) {
-    setTimeout(() => {
-      calc.classList.add("open_calc");
-    }, 500);
-    setTimeout(() => {
-      calcItems.classList.add("open_calc-items");
-    }, 700);
-    setTimeout(() => {
-      testBtnCalc = true;
-    }, 1200);
-    console.log(testBtnCalc);
-  } else {
-    calcItems.classList.remove("open_calc-items");
-    setTimeout(() => {
-      calc.classList.remove("open_calc");
-    }, 700);
-    setTimeout(() => {
-      secTree.classList.remove("padd-sec-3");
-    }, 1200);
-    setTimeout(() => {
-      testBtnCalc = false;
-    }, 1200);
-  }
-}
-
-opnBtn.addEventListener("click", () => {
-  openCalc();
+const openCalc = () => {
   opnBtn.disabled = true;
-  opnBtn.style.opacity = "0";
+  opnBtn.style.opacity = '0';
+
+  setTimeout(() => {
+    calc.classList.add('open_calc');
+  }, 500);
+  setTimeout(() => {
+    calcItems.classList.add('open_calc-items');
+  }, 700);
+};
+
+opnBtn.addEventListener('click', () => {
+  openCalc();
 });
 
-const sampOne = document.getElementById("samp-one");
-const sampTwo = document.getElementById("samp-two");
-const sampTree = document.getElementById("samp-tree");
-const sampFour = document.getElementById("samp-four");
-const sampFive = document.getElementById("samp-five");
-const sampSix = document.getElementById("samp-six");
-
-function sampleValue(sampleNumber) {
+const sampleValue = (sampleNumber) => {
   sample.value = sampleNumber;
   calc.scrollIntoView((top = false));
+};
+
+const sampItems = document.querySelectorAll('.sec-3__items');
+
+for (let el of sampItems) {
+  const sampItem = el.querySelectorAll('li');
+  for (let item of sampItem) {
+    item.addEventListener('click', () => {
+      const title = item.querySelector('h2');
+      sampleValue(title.id);
+      openCalc();
+    });
+  }
 }
-
-sampOne.addEventListener("click", sampleValue("375"));
-
-sampTwo.addEventListener("click", sampleValue("583"));
-
-sampTree.addEventListener("click", sampleValue("585"));
-
-sampFour.addEventListener("click", sampleValue("750"));
-
-sampFive.addEventListener("click", sampleValue("958"));
-
-sampSix.addEventListener("click", sampleValue("999"));
 
 // Contact us
 
-const firstName = document.getElementById("name");
-const email = document.getElementById("email");
-const text = document.getElementById("text");
+const firstName = document.getElementById('name');
+const email = document.getElementById('email');
+const text = document.getElementById('text');
 
-const sendBtn = document.getElementById("send_btn");
-const sendMessage = document.querySelector(".messageSend");
+const sendBtn = document.getElementById('send_btn');
+const sendMessage = document.querySelector('.messageSend');
 
-sendBtn.addEventListener("click", () => {
+sendBtn.addEventListener('click', () => {
   const formObj = {
     firstName: firstName.value,
     email: email.value,
@@ -333,59 +307,57 @@ sendBtn.addEventListener("click", () => {
   };
 
   if (
-    firstName.value.trim() === "" ||
-    email.value.trim() === "" ||
-    text.value.trim() === ""
+    firstName.value.trim() === '' ||
+    email.value.trim() === '' ||
+    text.value.trim() === ''
   ) {
     return;
-  } else if (email.value.includes("@")) {
-    sendMessage.classList.add("messageSendOpen");
+  } else if (email.value.includes('@')) {
+    sendMessage.classList.add('messageSendOpen');
     sendMessage.textContent = `${firstName.value}, your message has been sent`;
-    firstName.value = "";
-    email.value = "";
-    text.value = "";
+    firstName.value = '';
+    email.value = '';
+    text.value = '';
     setTimeout(() => {
-      sendMessage.classList.remove("messageSendOpen");
+      sendMessage.classList.remove('messageSendOpen');
     }, 3000);
   }
-
-  console.log(formObj);
 });
 
 // BtnUP
 
-const btnUp = document.querySelector(".up__btn");
+const btnUp = document.querySelector('.up__btn');
 
-window.addEventListener("scroll", () => {
+window.addEventListener('scroll', () => {
   if (scrollY > 200) {
-    btnUp.classList.add("open_up-btn");
+    btnUp.classList.add('open_up-btn');
   } else {
-    btnUp.classList.remove("open_up-btn");
+    btnUp.classList.remove('open_up-btn');
   }
 });
 
 // MobileBtn
 
-const menuBtn = document.querySelector(".menu-btn");
-const menu = document.querySelector(".mobile__menu");
+const menuBtn = document.querySelector('.menu-btn');
+const menu = document.querySelector('.mobile__menu');
 
-const itemMenuOne = document.getElementById("one-item");
-const itemMenuTwo = document.getElementById("two-item");
-const itemMenuTree = document.getElementById("tree-item");
-const itemMenuFour = document.getElementById("four-item");
+const itemMenuOne = document.getElementById('one-item');
+const itemMenuTwo = document.getElementById('two-item');
+const itemMenuThree = document.getElementById('three-item');
+const itemMenuFour = document.getElementById('four-item');
 
 let menuOpen = false;
 
-menuBtn.addEventListener("click", () => {
+menuBtn.addEventListener('click', () => {
   if (!menuOpen) {
     mobileMenuOpen();
-    menu.classList.remove("close_menu", "open_menu");
+    menu.classList.remove('close_menu', 'open_menu');
   } else if (menuOpen === true) {
     mobileMenuClose();
   }
 });
 
-function openCloseMenu(element, action, clsName, time) {
+const openCloseMenu = (element, action, clsName, time) => {
   if (!action) {
     setTimeout(() => {
       element.classList.remove(clsName);
@@ -395,31 +367,31 @@ function openCloseMenu(element, action, clsName, time) {
       element.classList.add(clsName);
     }, time);
   }
-}
+};
 
-function mobileMenuOpen() {
-  openCloseMenu(menuBtn, true, "open", 0);
-  openCloseMenu(menu, true, "open_menu", 100);
-  openCloseMenu(itemMenuOne, true, "open_menu-items", 700);
-  openCloseMenu(itemMenuTwo, true, "open_menu-items", 800);
-  openCloseMenu(itemMenuTree, true, "open_menu-items", 900);
-  openCloseMenu(itemMenuFour, true, "open_menu-items", 1000);
+const mobileMenuOpen = () => {
+  openCloseMenu(menuBtn, true, 'open', 0);
+  openCloseMenu(menu, true, 'open_menu', 100);
+  openCloseMenu(itemMenuOne, true, 'open_menu-items', 700);
+  openCloseMenu(itemMenuTwo, true, 'open_menu-items', 800);
+  openCloseMenu(itemMenuThree, true, 'open_menu-items', 900);
+  openCloseMenu(itemMenuFour, true, 'open_menu-items', 1000);
 
   menuOpen = true;
-}
+};
 
-function mobileMenuClose() {
-  openCloseMenu(menuBtn, false, "open", 0);
-  openCloseMenu(itemMenuFour, false, "open_menu-items", 100);
-  openCloseMenu(itemMenuTree, false, "open_menu-items", 200);
-  openCloseMenu(itemMenuTwo, false, "open_menu-items", 300);
-  openCloseMenu(itemMenuOne, false, "open_menu-items", 400);
-  openCloseMenu(menu, true, "close_menu", 600);
+const mobileMenuClose = () => {
+  openCloseMenu(menuBtn, false, 'open', 0);
+  openCloseMenu(itemMenuFour, false, 'open_menu-items', 100);
+  openCloseMenu(itemMenuThree, false, 'open_menu-items', 200);
+  openCloseMenu(itemMenuTwo, false, 'open_menu-items', 300);
+  openCloseMenu(itemMenuOne, false, 'open_menu-items', 400);
+  openCloseMenu(menu, true, 'close_menu', 600);
 
   menuOpen = false;
-}
+};
 
-window.addEventListener("scroll", () => {
+window.addEventListener('scroll', () => {
   if (scrollY > 50 && menuOpen === true) {
     mobileMenuClose();
   }
