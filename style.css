@@ -613,7 +613,7 @@ header {
 }
 
 #sec-2 h1._active {
-  opacity: 1;
+  opacity: 1 !important;
 }
 
 .sec-2_items {
