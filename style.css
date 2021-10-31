@@ -761,6 +761,7 @@ header {
 @media (max-width: 43.75rem) {
   .sec-2_items {
     flex-direction: column;
+    opacity: 1;
   }
 
   .sec-2_items p {
