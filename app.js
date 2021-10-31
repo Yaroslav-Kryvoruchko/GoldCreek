@@ -183,8 +183,8 @@ if (animItems.length > 0) {
       }
 
       if (
-        scrollY > animItemOffSet - animItemPoint &&
-        scrollY < animItemOffSet + animItemHight
+        pageYOffset > animItemOffSet - animItemPoint &&
+        pageYOffset < animItemOffSet + animItemHight
       ) {
         animItem.classList.add('_active');
       } else {

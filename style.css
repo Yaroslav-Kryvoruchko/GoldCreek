@@ -607,13 +607,13 @@ header {
   font-size: 3.5rem;
   font-weight: bold;
   margin-bottom: 10rem;
-  opacity: 0;
+  opacity: 1;
 
   transition: opacity 1s ease 0s;
 }
 
 #sec-2 h1._active {
-  opacity: 1 !important;
+  opacity: 1;
 }
 
 .sec-2_items {
