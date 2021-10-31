@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
 /* font-family: "Noto Sans JP", sans-serif; */
 
-@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 /* font-family: "Abril Fatface", cursive; */
 
 * {
@@ -59,7 +59,7 @@ header {
 
 .header__item a {
   text-decoration: none;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 1.25rem;
   font-weight: bold;
   color: white;
@@ -128,7 +128,7 @@ header {
 
 .menu-btn__burger::before,
 .menu-btn__burger::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 30px;
   height: 4px;
@@ -229,7 +229,7 @@ header {
 
 .mobile__menu__item a {
   text-decoration: none;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 2rem;
   color: white;
   text-transform: capitalize;
@@ -327,7 +327,7 @@ header {
 
 #btn_left::before,
 #btn_left::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 30px;
   height: 5px;
@@ -364,7 +364,7 @@ header {
 
 #btn_right::before,
 #btn_right::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 30px;
   height: 5px;
@@ -435,7 +435,7 @@ header {
   position: absolute;
   background: linear-gradient(to top, rgb(0, 0, 0) -85%, transparent),
     linear-gradient(to bottom, rgb(0, 0, 0) -10%, transparent),
-    url("images/shutterstock_220523407.jpg") left 10% bottom 70% / cover
+    url('images/shutterstock_220523407.jpg') left 10% bottom 70% / cover
       no-repeat border-box;
   width: 100%;
   height: 100%;
@@ -452,7 +452,7 @@ header {
   position: absolute;
   background: linear-gradient(to top, rgb(0, 0, 0) -85%, transparent),
     linear-gradient(to bottom, rgb(0, 0, 0) -10%, transparent),
-    url("images/wp3882286.jpg") left 10% bottom 70% / cover no-repeat border-box;
+    url('images/wp3882286.jpg') left 10% bottom 70% / cover no-repeat border-box;
   width: 100%;
   height: 100%;
 
@@ -468,7 +468,7 @@ header {
   position: absolute;
   background: linear-gradient(to top, rgb(0, 0, 0) -85%, transparent),
     linear-gradient(to bottom, rgb(0, 0, 0) -10%, transparent),
-    url("images/troy-mortier-eKY6_9W_iqY-unsplash.jpg") left 10% bottom 70% /
+    url('images/troy-mortier-eKY6_9W_iqY-unsplash.jpg') left 10% bottom 70% /
       cover no-repeat border-box;
   width: 100%;
   height: 100%;
@@ -485,7 +485,7 @@ header {
   position: absolute;
   background: linear-gradient(to top, rgb(0, 0, 0) -85%, transparent),
     linear-gradient(to bottom, rgb(0, 0, 0) -10%, transparent),
-    url("images/Photo\ by\ Newcrest\ Mining.jpg") left 10% bottom 70% / cover
+    url('images/Photo\ by\ Newcrest\ Mining.jpg') left 10% bottom 70% / cover
       no-repeat border-box;
   width: 100%;
   height: 100%;
@@ -504,7 +504,7 @@ header {
 .home_item-four h1 {
   font-size: 4.5rem;
   color: white;
-  font-family: "Abril Fatface", cursive;
+  font-family: 'Abril Fatface', cursive;
   font-weight: 500;
   text-align: center;
   margin-bottom: 2.5rem;
@@ -522,7 +522,7 @@ header {
   outline: none;
   text-decoration: none;
   font-size: 2rem;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
 
   transition: color 0.4s ease 0s, background 0.4s ease 0s;
 }
@@ -603,7 +603,7 @@ header {
 }
 
 #sec-2 h1 {
-  font-family: "Abril Fatface", cursive;
+  font-family: 'Abril Fatface', cursive;
   font-size: 3.5rem;
   font-weight: bold;
   margin-bottom: 10rem;
@@ -643,7 +643,7 @@ header {
 .sec-2_items p {
   text-align: right;
   margin: 0 4rem 0 0;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 1.25rem;
 }
 
@@ -676,7 +676,7 @@ header {
 }
 
 #arrow::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 5px;
   height: 20px;
@@ -686,7 +686,7 @@ header {
 }
 
 #arrow::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 5px;
   height: 20px;
@@ -829,7 +829,7 @@ header {
   width: 100vw;
   background: linear-gradient(to top, rgb(0, 0, 0) -85%, transparent),
     linear-gradient(to bottom, rgb(0, 0, 0) -10%, transparent),
-    url("images/jason-jarrach-QN50uuCf6UY-unsplash.jpg") left 10% bottom 60% /
+    url('images/jason-jarrach-QN50uuCf6UY-unsplash.jpg') left 10% bottom 60% /
       cover no-repeat border-box;
   background-attachment: fixed;
   padding: 10rem 0 0 0;
@@ -887,13 +887,13 @@ header {
 }
 
 .sec-3__item h2 {
-  font-family: "Abril Fatface", cursive;
+  font-family: 'Abril Fatface', cursive;
   font-size: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
 .sec-3__item p {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 1rem;
   margin: 0;
 }
@@ -906,7 +906,7 @@ header {
   color: white;
   border: 3px solid white;
   padding: 0.5rem 1rem;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 1.5rem;
   outline: none;
   cursor: pointer;
@@ -964,7 +964,7 @@ header {
 
 label {
   color: white;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 1rem;
 }
 
@@ -972,7 +972,7 @@ label {
   width: 150px;
   height: 50px;
   border: 3px solid white;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 1.25rem;
   cursor: pointer;
 
@@ -984,14 +984,14 @@ label {
   width: 150px;
   height: 50px;
   border: 3px solid white;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 1.25rem;
   text-align: center;
 
   outline: none;
 }
 
-input[type="number"]::-webkit-inner-spin-button {
+input[type='number']::-webkit-inner-spin-button {
   width: 50px;
   height: 50px;
 }
@@ -999,7 +999,7 @@ input[type="number"]::-webkit-inner-spin-button {
 #price {
   width: 150px;
   height: 50px;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 1.25rem;
   display: flex;
   align-items: center;
@@ -1016,7 +1016,7 @@ input[type="number"]::-webkit-inner-spin-button {
   height: 50px;
   border: 3px solid white;
   color: white;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 1.25rem !important;
   outline: none;
   cursor: pointer;
@@ -1125,6 +1125,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
   .sec-3__item {
     margin: 3.75rem 0;
+    transform: translateY(0);
     opacity: 1;
   }
 
@@ -1147,7 +1148,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 #sec-4 h1 {
-  font-family: "Abril Fatface", cursive;
+  font-family: 'Abril Fatface', cursive;
   font-size: 3.5rem;
   margin-bottom: 0;
   opacity: 0;
@@ -1160,7 +1161,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 #sec-4 h2 {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 1.5rem;
   font-weight: 400;
   margin-top: 0;
@@ -1196,7 +1197,7 @@ input[type="number"]::-webkit-inner-spin-button {
   width: 400px;
   height: 50px;
   margin: 0.75rem;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 1.25rem;
   padding: 0 0.5rem;
   border: 2px solid black;
@@ -1211,7 +1212,7 @@ input[type="number"]::-webkit-inner-spin-button {
   width: 400px;
   height: 150px;
   margin: 0.75rem;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 1.25rem;
   padding: 0 0.5rem;
   border: 2px solid black;
@@ -1230,7 +1231,7 @@ input[type="number"]::-webkit-inner-spin-button {
   width: 400px;
   height: 50px;
   margin: 0.75rem;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 1.25rem;
   background: none;
   border-left: 2px solid black !important;
@@ -1252,7 +1253,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 #send_btn::before,
 #send_btn::after {
-  content: "";
+  content: '';
   position: absolute;
   width: 0%;
   height: 2px;
@@ -1287,7 +1288,7 @@ input[type="number"]::-webkit-inner-spin-button {
   justify-content: center;
   width: 400px;
   height: 50px;
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 1.25rem;
   background: rgba(30, 255, 0, 0.5);
 
@@ -1426,7 +1427,7 @@ footer {
 }
 
 .footer-seti__item a {
-  font-family: "Noto Sans JP", sans-serif;
+  font-family: 'Noto Sans JP', sans-serif;
   font-size: 1.25rem;
   font-weight: bold;
   color: white;
