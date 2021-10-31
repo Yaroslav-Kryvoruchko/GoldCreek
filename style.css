@@ -782,6 +782,7 @@ header {
 @media (max-width: 375px) {
   .sec-2_items {
     flex-direction: column;
+    transform: translateY(0);
     opacity: 1;
   }
 
@@ -1382,6 +1383,7 @@ input[type='number']::-webkit-inner-spin-button {
   .sec-4__item textarea,
   .sec-4__item button {
     width: 300px;
+    transform: translateY(0);
     opacity: 1;
   }
 
