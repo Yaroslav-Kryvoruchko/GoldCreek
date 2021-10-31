@@ -1380,7 +1380,12 @@ input[type='number']::-webkit-inner-spin-button {
   }
 
   .sec-4__item input,
-  .sec-4__item textarea,
+  .sec-4__item textarea {
+    width: 300px;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
   #send_btn {
     width: 300px;
     transform: translateY(0);
