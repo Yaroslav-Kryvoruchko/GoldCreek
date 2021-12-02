@@ -1235,44 +1235,19 @@ input[type='number']::-webkit-inner-spin-button {
   font-family: 'Noto Sans JP', sans-serif;
   font-size: 1.25rem;
   background: none;
-  border-left: 2px solid black !important;
-  border-right: 2px solid black !important;
-  border: none;
+  border: 2px solid black;
   outline: none;
   cursor: pointer;
 
   opacity: 0;
   transform: translateY(100%);
 
-  transition: opacity 0.5s ease 0s, transform 0.5s ease 0s,
-    font-size 0.4s ease 0s;
+  transition: color 0.4s linear 0s, border 0.4s linear 0s;
 }
 
 #send_btn:hover {
-  font-size: 1.5rem;
-}
-
-#send_btn::before,
-#send_btn::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  background: black;
-
-  transition: width 0.4s ease 0s;
-}
-
-#send_btn::before {
-  transform: translateY(25px);
-}
-#send_btn::after {
-  transform: translateY(-25px);
-}
-
-#send_btn:hover::before,
-#send_btn:hover::after {
-  width: 101%;
+  border: 2px solid #b8860b;
+  color: #b8860b;
 }
 
 .sec-4__item input._active,
@@ -1446,6 +1421,11 @@ footer {
   width: 32px;
   height: 32px;
   margin: 0 0.25rem;
+}
+
+#facebook {
+  background: white;
+  border-radius: 20%;
 }
 
 #telegram {
